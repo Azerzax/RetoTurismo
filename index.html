@@ -21,13 +21,15 @@
         <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Agencia de Viajes</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#login" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
         
               <div class="collapse navbar-collapse row text-end" id="navbarsExample04">
                 <form>
-                    <button type="button" class="btn btn-primary mt-2 col-12 col-md-3 col-lg-2">Login</button>
+                    <button type="button" class="btn btn-primary mt-2 col-12 col-md-3 col-lg-2" data-bs-toggle="modal" data-bs-target="#login">
+                        Login
+                    </button>
                 </form>
               </div>
             </div>
@@ -41,6 +43,28 @@
     <div id="cuerpo">
         
     </div>
+
+    <!--MODALS-->
+
+  <div class="modal fade" id="login" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!--MODAL END-->
     
 </body>
 </html>
