@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery-3.6.0.js"></script>
     <!--Boostrap-->
 
     <!-- https://colorhunt.co/palette/ecf4f3d1eecc76dbd157a99a  -->  <!-- PALETA DE COLORES -->
@@ -38,6 +39,150 @@
     </header>
 
     <div id="motor_busqueda">
+
+
+      <div class="text-center mt-5 mb-3">
+        <h2>Tu viaje comienza aquí</h2>
+      </div>
+  
+      <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Ida y vuelta</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Sólo ida</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Vuelta</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content" id="pills-tabContent">
+      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="container-fluid justify-content-center">
+          <div class="row justify-content-center">
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-iphone-01.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-iphone-02.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-iphone-03.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class="container-fluid justify-content-center">
+          <div class="row justify-content-center">
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-ipad-01.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-ipad-02.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-ipad-03.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+        <div class="container-fluid justify-content-center">
+          <div class="row justify-content-center">
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-mac-01.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-mac-02.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-mac-03.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-watch" role="tabpanel" aria-labelledby="pills-watch-tab">
+        <div class="container-fluid justify-content-center">
+          <div class="row justify-content-center">
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-watch-01.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-watch-02.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            <div class="card border-0" style="width: 18rem;">
+              <img src="images/pestanas-watch-03.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </div>
 
@@ -160,23 +305,67 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          ...
+          <ul class="nav nav-pills row mx-auto p-0" id="pills-tab" role="tablist">
+            <li class="nav-item col-6 pe-1" role="presentation">
+              <button class="nav-link w-100 active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills_Login">Login</button>
+            </li>
+            <li class="nav-item col-6 ps-1" role="presentation">
+              <button class="nav-link w-100" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills_Register">Register</button>
+            </li>
+          </ul>
         </div>
+        <br>
+        <div class="tab-content">
+          <div class="tab-pane fade show active px-3" id="pills_Login">
+            <form>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form1Example1">Email address</label>
+                <input type="email" id="form1Example1" class="form-control" />
+              </div>
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form1Example2">Password</label>
+                <input type="password" id="form1Example2" class="form-control" />
+              </div>
+              <!-- 2 column grid layout for inline styling -->
+              <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+                  <!-- Checkbox -->
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="form1Example3"
+                      checked
+                    />
+                    <label class="form-check-label" for="form1Example3"> Remember me </label>
+                  </div>
+                </div>
+            
+                <div class="col">
+                  <!-- Simple link -->
+                  <a href="#!">Forgot password?</a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="tab-pane fade" id="pills_Register">
+            test2
+          </div>
+      </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary w-100">Login</button>
         </div>
       </div>
     </div>
   </div>
 
     <!--MODAL END-->
-
-  <script src="/js/jquery-3.6.0.js"></script>
     
 </body>
 </html>
