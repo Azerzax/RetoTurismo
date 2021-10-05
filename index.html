@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Libreria para las estrellas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--Boostrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/index.css">
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/jquery-3.6.0.js"></script>
     <!--Boostrap-->
@@ -188,12 +191,95 @@
 
     <div id="cuerpo" class="mt-5"> <!--DIV QUE CONTIENE EL CARRUSEL-->
 
-      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> <!--AQUI EMPEZARIA EL CARRUSEL DE CARTAS-->
+      <h3>Empieza a planear tu viaje:</h3>
+
+      <div id="carouselExampleControls" class="carousel carrusel carousel-fade" data-bs-ride="carousel"> <!--AQUI EMPEZARIA EL CARRUSEL DE CARTAS-->
         <div class="carousel-inner">
 
           <div class="carousel-item d-flex active"> <!--INTERIOR CON LAS CARTAS-->
 
-            <div class="card col-4">
+            <div class="card col-4" style="width: 18rem;">
+              <img src="https://picsum.photos/640/360" class="card-img-top" alt="...">
+              <div class="card-body">
+
+                <div class="ubicacion">
+                  <img src="img/ubicacion.png"><p>Ibiza, España</p>
+                </div>
+
+                <h5 class="card-title">Hard Rock Hotel Ibiza</h5>
+
+                <div class="estrellas">
+                  <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+                </div>
+
+                <div class="precio">
+                  <h5>XXX€</h5>
+                  <p>por noche</p>
+                </div>                
+
+              </div>
+            </div>
+
+
+            <div class="card col-4" style="width: 18rem;">
+              <img src="https://picsum.photos/640/360" class="card-img-top" alt="...">
+              <div class="card-body">
+
+                <div class="ubicacion">
+                  <img src="img/ubicacion.png"><p>Ibiza, España</p>
+                </div>
+
+                <h5 class="card-title">Hard Rock Hotel Ibiza</h5>
+
+                <div class="estrellas">
+                  <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+                </div>
+
+                <div class="precio">
+                  <h5>XXX€</h5>
+                  <p>por noche</p>
+                </div>                
+
+              </div>
+            </div>
+
+
+            <div class="card col-4" style="width: 18rem;">
+              <img src="https://picsum.photos/640/360" class="card-img-top" alt="...">
+              <div class="card-body">
+
+                <div class="ubicacion">
+                  <img src="img/ubicacion.png"><p>Ibiza, España</p>
+                </div>
+
+                <h5 class="card-title">Hard Rock Hotel Ibiza</h5>
+
+                <div class="estrellas">
+                  <span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span><span class="fa fa-star checked"></span>
+                </div>
+
+                <div class="precio">
+                  <h5>XXX€</h5>
+                  <p>por noche</p>
+                </div>                
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="carousel-item d-flex"><!--INTERIOR CON LAS CARTAS-->
+            
+            <div class="card" style="width: 18rem;">
+              <!-- <img src="..." class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
               <!-- <img src="..." class="card-img-top" alt="..."> -->
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -202,18 +288,7 @@
               </div>
             </div>
 
-
-            <div class="card">
-              <!-- <img src="..." class="card-img-top" alt="..."> -->
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-
-            <div class="card">
+            <div class="card" style="width: 18rem;">
               <!-- <img src="..." class="card-img-top" alt="..."> -->
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -226,7 +301,7 @@
 
           <div class="carousel-item d-flex"><!--INTERIOR CON LAS CARTAS-->
             
-            <div class="card">
+            <div class="card" style="width: 18rem;">
               <!-- <img src="..." class="card-img-top" alt="..."> -->
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -235,7 +310,7 @@
               </div>
             </div>
             
-            <div class="card">
+            <div class="card" style="width: 18rem;">
               <!-- <img src="..." class="card-img-top" alt="..."> -->
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -244,38 +319,7 @@
               </div>
             </div>
 
-            <div class="card">
-              <!-- <img src="..." class="card-img-top" alt="..."> -->
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="carousel-item d-flex"><!--INTERIOR CON LAS CARTAS-->
-            
-            <div class="card">
-              <!-- <img src="..." class="card-img-top" alt="..."> -->
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            
-            <div class="card">
-              <!-- <img src="..." class="card-img-top" alt="..."> -->
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card">
+            <div class="card" style="width: 18rem;">
               <!-- <img src="..." class="card-img-top" alt="..."> -->
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
