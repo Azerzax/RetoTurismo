@@ -291,9 +291,11 @@
   <div class="modal fade" id="login" tabindex="-1">
     <div class="modal-dialog">
       <div class="modal-content">
+        <!--modalHeader-->
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <!--modalBody-->
         <div class="modal-body">
           <ul class="nav nav-pills row mx-auto p-0" id="pills-tab" role="tablist">
             <li class="nav-item col-6 pe-1" role="presentation">
@@ -303,10 +305,10 @@
               <button class="nav-link w-100" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills_Register">Register</button>
             </li>
           </ul>
-        </div>
-        <br>
-        <div class="tab-content">
-          <div class="tab-pane fade show active px-3" id="pills_Login">
+          <hr>
+          <div class="tab-content">
+            <!--Login Block-->
+            <div class="tab-pane fade show active px-3" id="pills_Login">
             <form>
               <!-- Email input -->
               <div class="form-outline mb-4">
@@ -339,16 +341,45 @@
                   <a href="#!">Forgot password?</a>
                 </div>
               </div>
+              <hr>
+              <button type="button" class="btn btn-primary w-100">Register</button>
             </form>
+            </div>
+            <!--Register Block-->
+            <div class="tab-pane fade px-3" id="pills_Register">
+            <form>
+              <!--User input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form1Example1">Username</label>
+                <input type="email" id="form1Example1" class="form-control" />
+              </div>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form1Example1">Email address</label>
+                <input type="email" id="form1Example1" class="form-control" />
+              </div>
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form1Example2">Password</label>
+                <input type="password" id="form1Example2" class="form-control" />
+              </div>
+              <!-- Password_Verify input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form1Example2">Confirm Password</label>
+                <input type="password" id="form1Example2" class="form-control" />
+              </div>
+              <hr>
+              <button type="button" class="btn btn-primary w-100">Register</button>
+            </form>
+          
+            </div>
           </div>
-          <div class="tab-pane fade" id="pills_Register">
-            test2
-          </div>
-      </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary w-100">Login</button>
         </div>
       </div>
+    </div>
+  
+  
+  
     </div>
   </div>
 

@@ -1,0 +1,16 @@
+{
+    "account": [{
+        "user": "Marcelo",
+        "email": "j_quiroga@fpzornotza.com",
+        "password": "admin"
+    },{
+        "user": "Iñigo",
+        "email": "i_rosado@fpzornotza.com",
+        "password": "admin"
+    },{
+        "user": "Imrane",
+        "email": "i_azerzagh@fpzornotza.com",
+        "password": "admin"
+    }]  
+
+}
