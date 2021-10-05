@@ -1,11 +1,30 @@
 $(document).ready(beginning);
 
 function beginning(){
-  marceloScripts();
+  scriptMarcelo();
 }
 
-function marceloScripts(){
-  $('a#scrollUp')
+function scriptMarcelo(){
+  $('button#login')
     .off('click')
-    .on('click', functionName);
+    .on('click', login);
+  $('button#register')
+    .off('click')
+    .on('click', register);
 }
+
+function preventClick(event){
+  event.preventDefault();
+  event.stopPropagation();
+}
+
+function login(event){
+  event.preventClick;
+  console.log(1);
+}
+
+function register(event){
+  event.preventClick;
+  console.log(2);
+}
+
