@@ -1,4 +1,45 @@
+.cuerpo{
+    align-self: center;
+    align-items: center;
+}
 
 .carousel-control-next-icon{
     border: 1px solid black;
+}
+
+.carousel-control-prev-icon{
+    border: 1px solid black;
+}
+
+.carrusel{
+    margin: auto;
+    width: 70%;
+}
+
+.ubicacion{
+    display: grid;
+    grid-template-columns: 16px auto;
+}
+
+.ubicacion p{
+    margin-left: 3%;
+    color: rgba(0, 0, 0, 0.600);
+}
+
+/* COLOR PARA LAS ESTRELLAS */
+.checked{
+    color: orange;
+}
+
+.precio{
+    display: grid;
+    grid-template-columns: 20% 30%;
+}
+
+.precio h5{
+    color: black;
+}
+
+.precio p{
+    color: rgba(0, 0, 0, 0.600);
 }
