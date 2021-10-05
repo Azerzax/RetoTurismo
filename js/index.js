@@ -43,6 +43,9 @@ function preventClick(event){
 function login(event){
   event.preventClick;
   console.log(1);
+  var JSON_Login = fetch("../JSON/usuarios.json")
+  .then(response => response.json())
+  .then(json => console.log(json));
 }
 
 function register(event){
