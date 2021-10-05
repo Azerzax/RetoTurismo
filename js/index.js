@@ -42,12 +42,15 @@ function preventClick(event){
 
 function login(event){
   event.preventClick;
-  var JSON_Login = fetch("../JSON/usuarios.json")
-  .then(response => response.json())
-  .then(json => console.log(json));
+
   var user = $(this).find('input#formEmail').val();
   var password = $(this).find('input#formPassword').val();
   
+  var JSON_Login = fetch("../JSON/usuarios.json")
+    .then(function(data){return data.json();})
+    .then(function(json){JSON_Login = json;})
+  console.log(JSON_Login);
+
   return false;
 }
 
