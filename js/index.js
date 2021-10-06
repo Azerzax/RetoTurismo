@@ -23,24 +23,15 @@ function scriptMarcelo(){
   $('form#register')
     .off('click')
     .on('submit', register);
+  $('button#btnLogout')
+    .off('click')
+    .on('click', logout);
 }
 
 function scriptIñigo(){
-  $('button#login')
-    .off('click')
-    .on('click', login);
-  $('button#register')
-    .off('click')
-    .on('click', register);
 }
 
 function scriptImrane(){
-  $('button#login')
-    .off('click')
-    .on('click', login);
-  $('button#register')
-    .off('click')
-    .on('click', register);
 }
 
 function preventClick(event){
@@ -80,6 +71,11 @@ function login(event){
 function register(event){
   event.preventClick;
   console.log(2);
+}
+
+function logout(event) {
+  event.preventClick;
+  console.log(1);
 }
 
 /*MARCELO SCRIPTS*/
