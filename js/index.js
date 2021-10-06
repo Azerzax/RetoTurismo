@@ -7,12 +7,12 @@ function beginning(){
 }
 
 function scriptMarcelo(){
-  $('button#login')
+  $('form#login')
     .off('click')
-    .on('click', login);
-  $('button#register')
+    .on('submit', login);
+  $('form#register')
     .off('click')
-    .on('click', register);
+    .on('submit', register);
 }
 
 function scriptIñigo(){
@@ -42,10 +42,13 @@ function preventClick(event){
 
 function login(event){
   event.preventClick;
-  console.log(1);
   var JSON_Login = fetch("../JSON/usuarios.json")
   .then(response => response.json())
   .then(json => console.log(json));
+  var user = $(this).find('input#formEmail').val();
+  var password = $(this).find('input#formPassword').val();
+  
+  return false;
 }
 
 function register(event){
