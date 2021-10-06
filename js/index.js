@@ -1,3 +1,10 @@
+
+/*Variables*/
+
+var JSON_Login = "";
+
+/*Variables*/
+
 $(document).ready(beginning);
 
 function beginning(){
@@ -7,6 +14,9 @@ function beginning(){
 }
 
 function scriptMarcelo(){
+
+  bbdd();
+
   $('form#login')
     .off('click')
     .on('submit', login);
@@ -40,14 +50,27 @@ function preventClick(event){
 
 /*MARCELO SCRIPTS*/
 
+function bbdd() {
+  fetch("../JSON/usuarios.json")
+    .then(function(data){return data.json();})
+    .then(function(json){JSON_Login = JSON.parse(JSON.stringify(json));});
+  
+}
+
 function login(event){
   event.preventClick;
-  var JSON_Login = fetch("../JSON/usuarios.json")
-  .then(response => response.json())
-  .then(json => console.log(json));
-  var user = $(this).find('input#formEmail').val();
+
+  var status = false;
+  var email = $(this).find('input#formEmail').val();
   var password = $(this).find('input#formPassword').val();
-  
+
+  for (var i = 0; i < JSON_Login["account"].length && status == false; i++) {
+    if (email == JSON_Login["account"][i]["email"] && password == JSON_Login["account"][i]["password"]){
+      status = true;
+      console.log("Logged");
+    }
+  };
+
   return false;
 }
 
