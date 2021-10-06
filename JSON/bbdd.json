@@ -1,0 +1,41 @@
+{
+    "vuelos": [{
+        "cod": "1",
+        "nombre": "Lorem",
+        "ubicacion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.",
+        "precio": "100,00",
+        "rating": "5.0"
+    },{
+        "cod": "2",
+        "nombre": "Lorem",
+        "ubicacion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.",
+        "precio": "100,00",
+        "rating": "5.0"
+    },{
+        "cod": "3",
+        "nombre": "Lorem",
+        "ubicacion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.",
+        "precio": "100,00",
+        "rating": "5.0"
+    }],
+    "estancias": [{
+        "cod": "1",
+        "nombre": "Lorem",
+        "ubicacion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.",
+        "precio": "100,00",
+        "rating": "5.0"
+    },{
+        "cod": "2",
+        "nombre": "Lorem",
+        "ubicacion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.",
+        "precio": "100,00",
+        "rating": "5.0"
+    },{
+        "cod": "3",
+        "nombre": "Lorem",
+        "ubicacion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, itaque.",
+        "precio": "100,00",
+        "rating": "5.0"
+    }]    
+
+}
