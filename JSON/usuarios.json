@@ -2,15 +2,18 @@
     "account": [{
         "user": "Marcelo",
         "email": "j_quiroga@fpzornotza.com",
-        "password": "admin"
+        "password": "admin",
+        "status": "false"
     },{
         "user": "Iñigo",
         "email": "i_rosado@fpzornotza.com",
-        "password": "admin"
+        "password": "admin",
+        "status": "false"
     },{
         "user": "Imrane",
         "email": "i_azerzagh@fpzornotza.com",
-        "password": "admin"
+        "password": "admin",
+        "status": "false"
     }]  
 
 }
