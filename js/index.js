@@ -68,9 +68,12 @@ function login(event){
     if (email == JSON_Login["account"][i]["email"] && password == JSON_Login["account"][i]["password"]){
       status = true;
       console.log("Logged");
+      $("button#btnLogin").attr("data-bs-toggle","dropdown");
+      $("button#btnLogin")[0].innerHTML = JSON_Login["account"][i]["user"];
     }
   };
-
+  $("div#login").modal("hide");
+  $("button#btnLogin").addClass("dropdown-toggle");
   return false;
 }
 
