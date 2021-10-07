@@ -166,7 +166,7 @@ function autoGen(){
     }
 
     $('div#carrusel_estancias')[0].innerHTML += "</div>";
-
+  }
     /*
     $('div#carrusel_estancias')[0].innerHTML += "<div class='carousel-item items d-flex justify-content-center active'>"
                                              +    "<div class='card cartas c1 col-4'>"
@@ -186,7 +186,7 @@ function autoGen(){
                                              +    "</div>"
                                              +  "</div";
     
-  }
+  
 */
   // $('div#cuerpo')[0].innerHTML = ""; //Limpieza div cuerpo
 
