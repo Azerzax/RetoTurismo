@@ -131,4 +131,22 @@ function logout(event) {
 
 /*IMRANE SCRIPTS*/
 
+var pasajeros=document.querySelectorAll(".pasajeros");
+var pasajerosA=document.getElementById("pasajerosA");
+var pasajerosN=document.getElementById("pasajerosN");
+
+pasajerosA.value="1";
+pasajerosN.value="0";
+
+function setPasajeros() {
+  pasajeros.forEach(element => element.value=pasajerosA.value+"A");
+  if (pasajerosN.value!=0) {
+    pasajeros.forEach(element => element.value+=", "+pasajerosN.value+"N");
+  }
+}
+
+setPasajeros();
+
+document.getElementById("pasajerosSave").onclick= setPasajeros;
+
 /*IMRANE SCRIPTS*/
