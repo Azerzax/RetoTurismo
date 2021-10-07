@@ -62,6 +62,7 @@ function login(event){
       $("button#btnLogin")[0].innerHTML = JSON_Login["account"][i]["user"];
       $("div#login").modal("hide");
       $("button#btnLogin").addClass("dropdown-toggle");
+      $("form#login")[0].reset();
     }
   };
   return false;
@@ -75,7 +76,7 @@ function register(event){
   var password_x2 = $(this).find('input#formPasswordVerify').val();
 
   var specialsChar = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?";
-  var passwordVerify = true;
+  
   $("span.validation")[0].innerHTML = "";
 
   if(password != password_x2) { //Diferentes Password
@@ -89,23 +90,25 @@ function register(event){
       var character = false;
       for(var i = 0; i < Array.from(password).length && character == false; i++) {
         if(Array.from(specialsChar).indexOf(Array.from(password)[i]) != "-1"){//Verifica si contiene un caracter especial
-          passwordVerify = false;
+          character = true;
         }
       }
-      for(var i = 0; i < Array.from(password).length && passwordVerify == true; i++) {
-        if(isNaN(Array.from(password)[i])){ //Verifica si contiene un numero
-          passwordVerify = false;
+      var passwordVerify = false;
+      for(var i = 0; i < Array.from(password).length && passwordVerify == false; i++) {
+        if(!isNaN(Array.from(password)[i])){ //Verifica si contiene un numero
+          passwordVerify = true;
         }
       }
   
-      if (passwordVerify == false){
+      if (passwordVerify == false || character == false){
         $("span.validation").removeClass("d-none");
-        $("span.validation")[0].innerHTML = "no cumple con las politicas de seguridad";
+        $("span.validation")[0].innerHTML = "no cumple con las politicas de seguridad, requiere de un caracter especial y un numero";
       } else {
         $("button#btnLogin").attr("data-bs-toggle","dropdown");
         $("button#btnLogin")[0].innerHTML = username;
         $("div#login").modal("hide");
         $("button#btnLogin").addClass("dropdown-toggle");
+        $("form#register")[0].reset();
       }
     }
   }
