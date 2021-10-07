@@ -2,21 +2,20 @@
 /*Variables*/
 
 var JSON_Login = "";
+var JSON_bbdd = "";
 
 /*Variables*/
 
 $(document).ready(beginning);
 
 function beginning(){
+  bbdd();
   scriptMarcelo();
   scriptIñigo();
   scriptImrane();
 }
 
 function scriptMarcelo(){
-
-  bbdd();
-
   $('form#login')
     .off('click')
     .on('submit', login);
@@ -29,6 +28,7 @@ function scriptMarcelo(){
 }
 
 function scriptIñigo(){
+  
 }
 
 function scriptImrane(){
@@ -42,9 +42,17 @@ function preventClick(event){
 /*MARCELO SCRIPTS*/
 
 function bbdd() {
+  fetch("../JSON/bbdd.json")
+  .then(function(data){return data.json();})
+  .then(function(json){JSON_bbdd = JSON.parse(JSON.stringify(json));});
+
   fetch("../JSON/usuarios.json")
     .then(function(data){return data.json();})
-    .then(function(json){JSON_Login = JSON.parse(JSON.stringify(json));});
+    .then(function(json){JSON_Login = JSON.parse(JSON.stringify(json));})
+    .then(function(){autoGen()});
+    
+  
+    
 }
 
 function login(event){
@@ -126,6 +134,15 @@ function logout(event) {
 /*MARCELO SCRIPTS*/
 
 /*IÑIGO SCRIPTS*/
+
+function autoGen(){
+
+  console.log(JSON_bbdd);
+  $('div#cuerpo')[0].innerHTML = ""; //Limpieza div cuerpo
+
+  
+
+}
 
 /*IÑIGO SCRIPTS*/
 
