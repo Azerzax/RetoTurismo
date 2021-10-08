@@ -13,9 +13,8 @@
     color: orange;
 }
 
-.precio{
-    display: grid;
-    grid-template-columns: 20% 30%;
+.cartas{
+    height: 26rem;
 }
 
 .precio h5{

@@ -44,12 +44,12 @@ function preventClick(event){
 function bbdd() {
   fetch("../JSON/bbdd.json")
   .then(function(data){return data.json();})
-  .then(function(json){JSON_bbdd = JSON.parse(JSON.stringify(json));});
+  .then(function(json){JSON_bbdd = JSON.parse(JSON.stringify(json));})
+  .then(function(){autoGen()});
 
   fetch("../JSON/usuarios.json")
-    .then(function(data){return data.json();})
-    .then(function(json){JSON_Login = JSON.parse(JSON.stringify(json));})
-    .then(function(){autoGen()});
+  .then(function(data){return data.json();})
+  .then(function(json){JSON_Login = JSON.parse(JSON.stringify(json));});
     
   
     
@@ -136,7 +136,7 @@ function logout(event) {
 /*IÑIGO SCRIPTS*/
 
 function autoGen(){
-  // console.log(JSON_bbdd['estancias'][i]);    PARA MOSTRAR SEGUN LA POSICION DE LA i
+  // console.log(JSON_bbdd['estancias']);    //PARA MOSTRAR SEGUN LA POSICION DE LA i
   
 
   var cont=1;
@@ -144,20 +144,20 @@ function autoGen(){
   for (var i = 0; i < JSON_bbdd['estancias'].length; i++) {
       
     $('div#'+cont)[0].innerHTML += "<div class='card cartas c1 col-4'>"
-                                            +      "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='card-img-top'>"
-                                            +      "<div class='card-body'>"
-                                            +        "<div class='ubicacion'>"
-                                            +           "<img src='img/ubicacion.png'><p>"+JSON_bbdd['estancias'][i]['ubicacion']+"</p>"
-                                            +        "</div>"
-                                            +        "<h5 class='card-title'><a href=''>"+JSON_bbdd['estancias'][i]['nombre']+"</a></h5>"
-                                            +      "<div class='estrellas'>"
-                                            +        "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
-                                            +      "</div>"
-                                            +      "<div class='precio'>"
-                                            +        "<h5>"+JSON_bbdd['estancias'][i]['precio']+"€</h5>"
-                                            +        "<p>por noche</p>"
-                                            +      "</div>"
-                                            +    "</div>";
+                                +   "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='card-img-top'>"
+                                +     "<div class='card-body'>"
+                                +       "<div class='ubicacion'>"
+                                +          "<img src='img/ubicacion.png'><p>"+JSON_bbdd['estancias'][i]['ubicacion']+"</p>"
+                                +       "</div>"
+                                +       "<h5 class='card-title'><a href=''>"+JSON_bbdd['estancias'][i]['nombre']+"</a></h5>"
+                                +     "<div class='estrellas'>"
+                                +       JSON_bbdd['estancias'][i]['rating']
+                                +     "</div>"
+                                +     "<div class='precio'>"
+                                +       "<h5>"+JSON_bbdd['estancias'][i]['precio']+"€</h5>"
+                                +       "<p>por noche</p>"
+                                +     "</div>"
+                                +   "</div>";
       
     
     if ((i+1)%3==0) {

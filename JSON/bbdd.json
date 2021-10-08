@@ -4,75 +4,120 @@
         "nombre": "Hard Rock Hotel Ibiza",
         "ubicacion": "Ibiza, España",
         "precio": "100,00",
-        "rating": "5.0"
+        "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "2",
         "nombre": "HM Balangera",
         "ubicacion": "Palma de Mallorca, España",
         "precio": "100,00",
-        "rating": "4.0"
+        "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star'></span>"
     },{
         "cod": "3",
         "nombre": "Iberostar Heritage Grand Mencey",
         "ubicacion": "Santa Cruz de Tenerife, España",
         "precio": "100,00",
-        "rating": "5.0"
+        "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "4",
         "nombre": "Best Western Premier Hotel Dante",
         "ubicacion": "Barcelona, España",
         "precio": "100,00",
-        "rating": "5.0"
+        "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "5",
         "nombre": "Barceló Málaga Hotel",
         "ubicacion": "Málaga, España",
         "precio": "100,00",
-        "rating": "5.0"
+        "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "6",
         "nombre": "Hotel Colón Rambla",
         "ubicacion": "Santa Cruz de Tenerife, España",
         "precio": "100,00",
-        "rating": "5.0"
+        "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "7",
         "nombre": "FERGUS Style Bahamas",
         "ubicacion": "Ibiza, España",
         "precio": "100,00",
-        "rating": "5.0"
+        "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "8",
         "nombre": "Petit Palace Málaga Hotel",
         "ubicacion": "Málaga, España",
         "precio": "100,00",
-        "rating": "5.0"
+        "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "9",
         "nombre": "Nou High Hotel Baleares",
         "ubicacion": "Palma de Mallorca, España",
         "precio": "100,00",
-        "rating": "5.0"
+        "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     }
 ],
     "vuelos": [{
         "cod": "1",
-        "nombre": "Lorem",
-        "ubicacion": "",
-        "precio": "100,00",
-        "rating": "5.0"
+        "Lugar": "París",
+        "ida": "7:10 - 15:10",
+        "vuelta": "12:00 -- 21:35",
+        "precio": "24,00",
+        "escala": "false"
     },{
         "cod": "2",
-        "nombre": "Lorem",
-        "ubicacion": "",
-        "precio": "100,00",
-        "rating": "5.0"
+        "Lugar": "Roma",
+        "ida": "6:30 -- 9:00",
+        "vuelta": "9:25 -- 12:00",
+        "precio": "28,00",
+        "escala": "false"
     },{
         "cod": "3",
-        "nombre": "Lorem",
-        "ubicacion": "",
-        "precio": "100,00",
-        "rating": "5.0"
+        "Lugar": "Londres",
+        "ida": "13:05 -- 14:35",
+        "vuelta": "18:15 -- 21:45",
+        "precio": "16,00",
+        "escala": "false"
+    },{
+        "cod": "4",
+        "Lugar": "Dubrovnik",
+        "ida": "15:50 -- 18:45",
+        "vuelta": "19:40 -- 22:50",
+        "precio": "104,00",
+        "escala": "false"
+    },{
+        "cod": "5",
+        "Lugar": "Copenhague",
+        "ida": "6:50 -- 10:00",
+        "vuelta": "10:25 -- 13:40",
+        "precio": "22,00",
+        "escala": "false"
+    },{
+        "cod": "6",
+        "Lugar": "Praga",
+        "ida": "7:15 -- 10:00",
+        "vuelta": "20:05 -- 23:00",
+        "precio": "82,00",
+        "escala": "false"
+    },{
+        "cod": "7",
+        "Lugar": "Bangkok",
+        "ida": "10:15 -- 7:15+1",
+        "vuelta": "9:05 -- 20:15",
+        "precio": "350,00",
+        "escala": "true"
+    },{
+        "cod": "8",
+        "Lugar": "Cotonú",
+        "ida": "6:00 -- 20:20",
+        "vuelta": "23:00 -- 11:25",
+        "precio": "552,00",
+        "escala": "true"
+    },{
+        "cod": "9",
+        "Lugar": "Podgorica",
+        "ida": "7:10 -- 15:10",
+        "vuelta": "12:00 -- 21:35",
+        "precio": "67,00",
+        "escala": "true"
     }]    
 
 }
