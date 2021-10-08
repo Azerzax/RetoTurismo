@@ -185,9 +185,9 @@ function autoGen(){
                                              +      "</div>"
                                              +    "</div>"
                                              +  "</div";
-    
+ */   
   }
-*/
+
   // $('div#cuerpo')[0].innerHTML = ""; //Limpieza div cuerpo
 
   
