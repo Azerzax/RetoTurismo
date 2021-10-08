@@ -137,36 +137,34 @@ function logout(event) {
 
 function autoGen(){
   // console.log(JSON_bbdd['estancias'][i]);    PARA MOSTRAR SEGUN LA POSICION DE LA i
-  $('div#carrusel_estancias')[0].innerHTML = "";
+  
 
-
+  var cont=1;
 
   for (var i = 0; i < JSON_bbdd['estancias'].length; i++) {
-
-    $('div#carrusel_estancias')[0].innerHTML += "<div class='carousel-item items d-flex justify-content-center active'>";
-
-    for (var j = 0; j < 3; index++) {
       
-      $('div#carrusel_estancias')[0].innerHTML += "<div class='card cartas c1 col-4'>"
-                                             +      "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='card-img-top'>"
-                                             +      "<div class='card-body'>"
-                                             +        "<div class='ubicacion'>"
-                                             +           "<img src='img/ubicacion.png'><p>"+JSON_bbdd['estancias'][i]['ubicacion']+"</p>"
-                                             +        "</div>"
-                                             +        "<h5 class='card-title'><a href=''>"+JSON_bbdd['estancias'][i]['nombre']+"</a></h5>"
-                                             +      "<div class='estrellas'>"
-                                             +        "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
-                                             +      "</div>"
-                                             +      "<div class='precio'>"
-                                             +        "<h5>"+JSON_bbdd['estancias'][i]['precio']+"€</h5>"
-                                             +        "<p>por noche</p>"
-                                             +      "</div>"
-                                             +    "</div>";
+    $('div#'+cont)[0].innerHTML += "<div class='card cartas c1 col-4'>"
+                                            +      "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='card-img-top'>"
+                                            +      "<div class='card-body'>"
+                                            +        "<div class='ubicacion'>"
+                                            +           "<img src='img/ubicacion.png'><p>"+JSON_bbdd['estancias'][i]['ubicacion']+"</p>"
+                                            +        "</div>"
+                                            +        "<h5 class='card-title'><a href=''>"+JSON_bbdd['estancias'][i]['nombre']+"</a></h5>"
+                                            +      "<div class='estrellas'>"
+                                            +        "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
+                                            +      "</div>"
+                                            +      "<div class='precio'>"
+                                            +        "<h5>"+JSON_bbdd['estancias'][i]['precio']+"€</h5>"
+                                            +        "<p>por noche</p>"
+                                            +      "</div>"
+                                            +    "</div>";
       
+    
+    if ((i+1)%3==0) {
+      cont++
     }
-
-    $('div#carrusel_estancias')[0].innerHTML += "</div>";
-
+    
+  }
     /*
     $('div#carrusel_estancias')[0].innerHTML += "<div class='carousel-item items d-flex justify-content-center active'>"
                                              +    "<div class='card cartas c1 col-4'>"
@@ -190,12 +188,27 @@ function autoGen(){
 
   // $('div#cuerpo')[0].innerHTML = ""; //Limpieza div cuerpo
 
-  
-
-}
 
 /*IÑIGO SCRIPTS*/
 
 /*IMRANE SCRIPTS*/
+
+var pasajeros=document.querySelectorAll(".pasajeros");
+var pasajerosA=document.getElementById("pasajerosA");
+var pasajerosN=document.getElementById("pasajerosN");
+
+pasajerosA.value="1";
+pasajerosN.value="0";
+
+function setPasajeros() {
+  pasajeros.forEach(element => element.value=pasajerosA.value+"A");
+  if (pasajerosN.value!=0) {
+    pasajeros.forEach(element => element.value+=", "+pasajerosN.value+"N");
+  }
+}
+
+setPasajeros();
+
+document.getElementById("pasajerosSave").onclick= setPasajeros;
 
 /*IMRANE SCRIPTS*/
