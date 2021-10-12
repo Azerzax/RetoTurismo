@@ -56,11 +56,6 @@
     }
 ],
 
-
-
-
-
-
     "vuelos": [{
         "cod": "1",
         "nombre": "Lorem",
@@ -91,19 +86,25 @@
         "nombre": "Lorem",
         "ubicacion": "España,Bilbao-Reino Unido,Londres",
         "precio": "120,00-50,00",
-        "Fecha":"21/03/2021,12:00,13:00"
+        "Fecha":"23/11/2021,12:00,13:00"
     },{
         "cod": "6",
         "nombre": "Lorem",
         "ubicacion": "España,Bilbao-Reino Unido,Liverpool",
         "precio": "120,00-50,00",
-        "Fecha":"21/03/2021,12:00,13:00"
+        "Fecha":"24/11/2021,12:00,13:00"
     },{
         "cod": "7",
         "nombre": "Lorem",
-        "ubicacion": "España(Madrid)-Francia(Paris)",
+        "ubicacion": "Reino Unido,Londres-España,Bilbao",
         "precio": "120,00-50,00",
-        "Fecha":"21/03/2021,12:00,13:00"
+        "Fecha":"23/12/2021,12:00,13:00"
+    },{
+        "cod": "8",
+        "nombre": "Lorem",
+        "ubicacion": "Reino Unido,Liverpool-España,Bilbao",
+        "precio": "120,00-50,00",
+        "Fecha":"23/12/2021,12:00,13:00"
     }]    
 
 }
