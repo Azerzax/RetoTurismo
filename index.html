@@ -74,33 +74,33 @@
 
               <div class="col-3" >
                 <div>Salida</div>
-                <input  type="text" class="form-control" placeholder="Desde">
+                <input id="sal1" type="text" class="form-control" placeholder="Desde">
               </div>
 
               <div class="col-3">
                 <div>Destino</div>
-                <input type="text" class="form-control" placeholder="Destino">
+                <input id="dest1" type="text" class="form-control" placeholder="Destino">
               </div>
 
               <div class="col-2">
                 <div>Ida</div>
-                <input type="date" class="form-control" >
+                <input id="ida1" type="date" class="form-control" >
               </div>
 
               <div class="col-2">
                 <div>Vuelta</div>
-                <input type="date"  class="form-control" >
+                <input id="vuelt1" type="date"  class="form-control" >
               </div>
 
               <div class="col-2">
                 <div>Pasajeros</div>
-                <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
+                <input id="pasaj1" type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
               </div>  
 
             </div>
 
             <div class="text-center mt-3">
-              <button class="btn-primary">Buscar</button>
+              <button id="buscar1" class="btn btn-primary">Buscar</button>
             </div>
 
           </form>
@@ -135,7 +135,7 @@
             </div>
 
             <div class="text-center mt-3">
-              <button class="btn-primary">Buscar</button>
+              <button class="btn btn-primary">Buscar</button>
             </div>
 
           </form>
@@ -170,7 +170,7 @@
             </div>
 
             <div class="text-center mt-3">
-              <button class="btn-primary">Buscar</button>
+              <button class="btn btn-primary">Buscar</button>
             </div>
 
           </form>
@@ -180,6 +180,7 @@
     </div>
 
   </div>
+
 
 
   <div class="modal fade" id="modalPasajeros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -206,6 +207,11 @@
   <!---------------------MOTOR DE BUSQUEDA---------------------------->
 
   <!-- CUERPO -->
+
+  <div id="vuelos">
+    Hola
+  </div>
+
   <div id="cuerpo" class="mt-5"> <!--DIV QUE CONTIENE EL CARRUSEL-->
 
     <h2 class="text-center">Empieza a planear tu viaje:</h2>

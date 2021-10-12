@@ -196,6 +196,8 @@ function autoGen(){
 var pasajeros=document.querySelectorAll(".pasajeros");
 var pasajerosA=document.getElementById("pasajerosA");
 var pasajerosN=document.getElementById("pasajerosN");
+var botonbuscar=document.getElementById("buscar1");
+var divVuelos=document.getElementById("vuelos");
 
 pasajerosA.value="1";
 pasajerosN.value="0";
@@ -207,8 +209,21 @@ function setPasajeros() {
   }
 }
 
-setPasajeros();
+function buscarVuelos() {
+  var salida = document.getElementById("sal1");
+  var dest = document.getElementById("dest1");
+  var ida = document.getElementById("ida1");
+  var vuelta = document.getElementById("vuelt1");
+  var pasajeros = document.getElementById("pasaj1");
 
+  divVuelos.innerHTML+=JSON_bbdd['vuelos'][0]['ubicacion'];
+
+}
+
+
+setPasajeros();
 document.getElementById("pasajerosSave").onclick= setPasajeros;
+
+botonbuscar.onclick= buscarVuelos;
 
 /*IMRANE SCRIPTS*/
