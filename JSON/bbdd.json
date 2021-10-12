@@ -55,69 +55,56 @@
         "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     }
 ],
+
     "vuelos": [{
         "cod": "1",
-        "Lugar": "París",
-        "ida": "7:10 - 15:10",
-        "vuelta": "12:00 -- 21:35",
-        "precio": "24,00",
-        "escala": "false"
+        "nombre": "Lorem",
+        "ubicacion": "España,Madrid-Francia,Paris",
+        "precio": "100,00-40,00",
+        "Fecha":"21/09/2021,12:00,13:00"
     },{
         "cod": "2",
-        "Lugar": "Roma",
-        "ida": "6:30 -- 9:00",
-        "vuelta": "9:25 -- 12:00",
-        "precio": "28,00",
-        "escala": "false"
+        "nombre": "Lorem",
+        "ubicacion": "España,Barcelona-Francia,Lyon",
+        "precio": "110,50-35,75",
+        "Fecha":"22/09/2021,15:00,17:00"
     },{
         "cod": "3",
-        "Lugar": "Londres",
-        "ida": "13:05 -- 14:35",
-        "vuelta": "18:15 -- 21:45",
-        "precio": "16,00",
-        "escala": "false"
+        "nombre": "Lorem",
+        "ubicacion": "Francia,Paris-España,Madrid",
+        "precio": "134,00-44,00",
+        "Fecha":"21/10/2021,11:00,12:00"
     },{
         "cod": "4",
-        "Lugar": "Dubrovnik",
-        "ida": "15:50 -- 18:45",
-        "vuelta": "19:40 -- 22:50",
-        "precio": "104,00",
-        "escala": "false"
-    },{
+        "nombre": "Lorem",
+        "ubicacion": "Francia,Lyon-España,Barcelona",
+        "precio": "102,30-23,33",
+        "Fecha":"22/10/2021,12:00,13:00"
+    }
+    ,{
         "cod": "5",
-        "Lugar": "Copenhague",
-        "ida": "6:50 -- 10:00",
-        "vuelta": "10:25 -- 13:40",
-        "precio": "22,00",
-        "escala": "false"
+        "nombre": "Lorem",
+        "ubicacion": "España,Bilbao-Reino Unido,Londres",
+        "precio": "120,00-50,00",
+        "Fecha":"23/11/2021,12:00,13:00"
     },{
         "cod": "6",
-        "Lugar": "Praga",
-        "ida": "7:15 -- 10:00",
-        "vuelta": "20:05 -- 23:00",
-        "precio": "82,00",
-        "escala": "false"
+        "nombre": "Lorem",
+        "ubicacion": "España,Bilbao-Reino Unido,Liverpool",
+        "precio": "120,00-50,00",
+        "Fecha":"24/11/2021,12:00,13:00"
     },{
         "cod": "7",
-        "Lugar": "Bangkok",
-        "ida": "10:15 -- 7:15+1",
-        "vuelta": "9:05 -- 20:15",
-        "precio": "350,00",
-        "escala": "true"
+        "nombre": "Lorem",
+        "ubicacion": "Reino Unido,Londres-España,Bilbao",
+        "precio": "120,00-50,00",
+        "Fecha":"23/12/2021,12:00,13:00"
     },{
         "cod": "8",
-        "Lugar": "Cotonú",
-        "ida": "6:00 -- 20:20",
-        "vuelta": "23:00 -- 11:25",
-        "precio": "552,00",
-        "escala": "true"
-    },{
-        "cod": "9",
-        "Lugar": "Podgorica",
-        "ida": "7:10 -- 15:10",
-        "vuelta": "12:00 -- 21:35",
-        "precio": "67,00",
-        "escala": "true"
+        "nombre": "Lorem",
+        "ubicacion": "Reino Unido,Liverpool-España,Bilbao",
+        "precio": "120,00-50,00",
+        "Fecha":"23/12/2021,12:00,13:00"
     }]    
 
 }
