@@ -61,50 +61,50 @@
         "nombre": "Lorem",
         "ubicacion": "España,Madrid-Francia,Paris",
         "precio": "100,00-40,00",
-        "Fecha":"21/09/2021,12:00,13:00"
+        "Fecha":"2021-09-21,12:00,13:00"
     },{
         "cod": "2",
         "nombre": "Lorem",
         "ubicacion": "España,Barcelona-Francia,Lyon",
         "precio": "110,50-35,75",
-        "Fecha":"22/09/2021,15:00,17:00"
+        "Fecha":"2021-09-22,15:00,17:00"
     },{
         "cod": "3",
         "nombre": "Lorem",
         "ubicacion": "Francia,Paris-España,Madrid",
         "precio": "134,00-44,00",
-        "Fecha":"21/10/2021,11:00,12:00"
+        "Fecha":"2021-10-21,11:00,12:00"
     },{
         "cod": "4",
         "nombre": "Lorem",
         "ubicacion": "Francia,Lyon-España,Barcelona",
         "precio": "102,30-23,33",
-        "Fecha":"22/10/2021,12:00,13:00"
+        "Fecha":"2021-10-22,12:00,13:00"
     }
     ,{
         "cod": "5",
         "nombre": "Lorem",
         "ubicacion": "España,Bilbao-Reino Unido,Londres",
         "precio": "120,00-50,00",
-        "Fecha":"23/11/2021,12:00,13:00"
+        "Fecha":"2021-11-23,12:00,13:00"
     },{
         "cod": "6",
         "nombre": "Lorem",
         "ubicacion": "España,Bilbao-Reino Unido,Liverpool",
         "precio": "120,00-50,00",
-        "Fecha":"24/11/2021,12:00,13:00"
+        "Fecha":"2021-11-24,12:00,13:00"
     },{
         "cod": "7",
         "nombre": "Lorem",
         "ubicacion": "Reino Unido,Londres-España,Bilbao",
         "precio": "120,00-50,00",
-        "Fecha":"23/12/2021,12:00,13:00"
+        "Fecha":"2021-12-23,12:00,13:00"
     },{
         "cod": "8",
         "nombre": "Lorem",
         "ubicacion": "Reino Unido,Liverpool-España,Bilbao",
         "precio": "120,00-50,00",
-        "Fecha":"23/12/2021,12:00,13:00"
+        "Fecha":"2021-12-23,12:00,13:00"
     }]    
 
 }

@@ -210,18 +210,28 @@ function setPasajeros() {
 }
 
 function buscarVuelos() {
+  divVuelos.innerHTML="";
   var salida = document.getElementById("sal1").value;
   var dest = document.getElementById("dest1").value;
   var ida = document.getElementById("ida1").value;
   var vuelta = document.getElementById("vuelt1").value;
-  var pasajeros = document.getElementById("pasaj1").value;
+  var pasajerosA = document.getElementById("pasajerosA").value;
+  var pasajerosN = document.getElementById("pasajerosN").value;
 
   JSON_bbdd['vuelos'].forEach(element => {
-    if (element["ubicacion"]==salida) {
-      divVuelos.innerHTML+=element["ubicacion"];
+    var fecha = element["Fecha"].split(",");
+    var precios = element["precio"].split("-");
+    console.log(fecha[0]);
+    console.log(ida);
+    if (element["ubicacion"].toUpperCase().includes(salida.toUpperCase()) && element["ubicacion"].toUpperCase().includes(dest.toUpperCase()) && (fecha[0]==ida || fecha[0]==vuelta )) {
+      divVuelos.innerHTML+=element["ubicacion"]+"<br>";
+      var precioAdulto=parseInt(precios[0]);
+      var cantidadAdultos=parseInt(pasajerosA);
+      var precioNiño=parseInt(precios[1]);
+      var cantidadNiños=parseInt(pasajerosN);
+      divVuelos.innerHTML+="Precio: "+  ((precioAdulto*cantidadAdultos)+(precioNiño*cantidadNiños)) +" <br> " ;
     }
   });
-  
 
 }
 
