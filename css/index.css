@@ -29,12 +29,12 @@
     width: 18rem;
 }
 
-.card-title a{
+.a{
     color: rgb(22, 22, 22);
     text-decoration: none;
 }
 
-.card-title a:hover{
+.a:hover{
     color: rgb(22, 22, 22);
     text-decoration: underline;
 }
