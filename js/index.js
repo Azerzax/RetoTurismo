@@ -210,13 +210,18 @@ function setPasajeros() {
 }
 
 function buscarVuelos() {
-  var salida = document.getElementById("sal1");
-  var dest = document.getElementById("dest1");
-  var ida = document.getElementById("ida1");
-  var vuelta = document.getElementById("vuelt1");
-  var pasajeros = document.getElementById("pasaj1");
+  var salida = document.getElementById("sal1").value;
+  var dest = document.getElementById("dest1").value;
+  var ida = document.getElementById("ida1").value;
+  var vuelta = document.getElementById("vuelt1").value;
+  var pasajeros = document.getElementById("pasaj1").value;
 
-  divVuelos.innerHTML+=JSON_bbdd['vuelos'][0]['ubicacion'];
+  JSON_bbdd['vuelos'].forEach(element => {
+    if (element["ubicacion"]==salida) {
+      divVuelos.innerHTML+=element["ubicacion"];
+    }
+  });
+  
 
 }
 
