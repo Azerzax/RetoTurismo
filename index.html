@@ -259,33 +259,31 @@
 
   <div id="cuerpo" class="mt-5"> <!--DIV QUE CONTIENE EL CARRUSEL-->
 
-    <h2 class="text-center">Empieza a planear tu viaje:</h2>
+    <h2 class="text-center">Empieza a planear tu viaje:</h2><br>
 
-    <div id="carouselExampleControls" class="carousel carousel-fade" data-bs-ride="carousel"> <!-- ABRIMOS CAROUSEL DE CARTAS-->
-      <div id="carrusel_estancias" class="carousel-inner carrusel"> <!-- CONTENEDOR DE LOS ITEMS -->
+    <div id="carouselExampleControls" class="row carousel carousel-fade justify-content-around" data-bs-ride="carousel"> <!-- ABRIMOS CAROUSEL DE CARTAS-->
+      <div id="carrusel_estancias" class="carousel-inner carrusel w-100 justify-content-around order-3 order-md-2 col"> <!-- CONTENEDOR DE LOS ITEMS -->
 
-        <div id="1" class="carousel-item items d-flex active justify-content-evenly p-0"> <!--INTERIOR CON LAS CARTAS-->
+        <div id="1" class="carousel-item d-flex active justify-content-evenly p-0"> <!--INTERIOR CON LAS CARTAS-->
 
         </div> <!-- PRIMER ITEM -->
 
-        <div id="2" class="carousel-item items d-flex justify-content-evenly p-0"><!--INTERIOR CON LAS CARTAS-->
+        <div id="2" class="carousel-item d-flex justify-content-evenly p-0"><!--INTERIOR CON LAS CARTAS-->
 
         </div> <!-- SEGUNDO ITEM -->
 
-        <div id="3" class="carousel-item items d-flex justify-content-evenly p-0"><!--INTERIOR CON LAS CARTAS-->
+        <div id="3" class="carousel-item d-flex justify-content-evenly p-0"><!--INTERIOR CON LAS CARTAS-->
 
         </div> <!-- TERCER ITEM -->
 
       </div> <!-- FINAL DE LAS CARTAS Y LOS ITEMS-->
 
       <!-- BOTONES DE NAVEGACION DEL CARRUSEL -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next d-block" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+      <button  type="button" class="order-1 col-6 col-md-1" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon m-0 botonesN" aria-hidden="true"></span>
+      </button> 
+      <button  type="button" class="order-2 order-md-3 col-6 col-md-1" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon m-0 botonesP" aria-hidden="true"></span> 
       </button>
       <!-- BOTONES DE NAVEGACION DEL CARRUSEL -->
 
@@ -293,6 +291,13 @@
 
   </div>
   <!-- CUERPO -->
+    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
+      <div class="d-flex align-items-center">
+        <span class="text-muted">© 2021 Company, Inc</span>
+      </div>
+    </footer>
+
+
 </div>
   <!--MODALS-->
   <div class="modal fade" id="login" tabindex="-1">
