@@ -139,12 +139,11 @@ function logout(event) {
 
 function autoGen(){
   // console.log(JSON_bbdd['estancias']);    //PARA MOSTRAR SEGUN LA POSICION DE LA i
-
   var cont=1;
 
   for (var i = 0; i < JSON_bbdd['estancias'].length; i++) {
       
-    $('div#'+cont)[0].innerHTML += "<a data-id='"+i+"' data-bs-toggle='modal' data-bs-target='#tarjetaModal' class='modalDeLlamada'>"
+    $('div#'+cont)[0].innerHTML += "<a data-id='"+i+"' data-bs-toggle='modal' data-bs-target='#tarjetaModal' class='modalDeCarta'>"
                                 +   "<div class='card cartas c1 col-4'>"
                                 +     "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='card-img-top'>"
                                 +     "<div class='card-body'>"
@@ -166,11 +165,14 @@ function autoGen(){
     if ((i+1)%3==0) {
       cont++
     }
-    }
-    $('a.modalDeLlamada')
-      .off('click')
-      .on('click', informacionCartasModal);
+
   }
+
+  $('a.modalDeCarta')
+    .off('click')
+    .on('click', informacionCartasModal);
+
+}
 
  
   // $('div#cuerpo')[0].innerHTML = ""; //Limpieza div cuerpo
@@ -184,26 +186,30 @@ function autoGen(){
                                           + "<div class='row'>"
                                           +   "<img class='col-lg-6 col-md-12 col-sm-12' src='img/"+JSON_bbdd['estancias'][$(this).data("id")]['nombre']+".jpg'>"
                                           +   "<div class='col-lg-6 col-md-12 col-sm-12'>"
+                                          +     "<h4>Introduce de que dia hasta que dia quieres estar alojado en el siguiente establecimiento</h4><br>"
                                           +    "<div class='ubicacion'>"
                                           +     "<img src='img/ubicacion.png'><p>"+JSON_bbdd['estancias'][$(this).data("id")]['ubicacion']+"</p>"
                                           +    "</div>"
-                                          +     "<h5>Introduce de que dia hasta que dia quieres estar alojado en el siguiente establecimiento</h5><br>"
                                           +    "<div class='row'>"
                                           +     "<div class='col-5'>Ida<input type='date' class='form-control'></div>"
                                           +     "<div class='col-5'>vuelta<input type='date' class='form-control'></div>"
                                           +    "</div><br>"
-                                          +    "<div class='estrellas'>"
-                                          +     JSON_bbdd['estancias'][$(this).data("id")]['rating']
-                                          +    "</div><br>" 
-                                          +    "<div class='precio'>"
-                                          +     "<h5>"+JSON_bbdd['estancias'][$(this).data("id")]['precio']+"€</h5>"
-                                          +     "<p>por noche</p>"
-                                          +    "</div>" 
-                                          +   "<button type='button' class='btn btn-primary w-100'>Reservar</button>"
+                                          +    "<div class='row'>"
+                                          +     "<div class='precio col-5'>"
+                                          +      "<div class='estrellas'>"
+                                          +       "Calificaciones:<br>"+JSON_bbdd['estancias'][$(this).data("id")]['rating']
+                                          +      "</div>" 
+                                          +      "Precio:<br><h5>"+JSON_bbdd['estancias'][$(this).data("id")]['precio']+"€</h5>"
+                                          +      "<p>por noche</p>"
+                                          +     "</div>" 
+                                          +     "<div class='col-5'>" 
+                                          +       "Adultos:<input class='form-control' type='number' value='0'>"
+                                          +       "Niños:<input class='form-control' type='number' value='0'>"
+                                          +     "</div>"
+                                          +    "</div>"
+                                          +   "<br><button type='button' class='btn btn-primary w-100'>Reservar</button>"
                                           +  "</div>";
-  }
-
-
+}
 
 
 /*IÑIGO SCRIPTS*/

@@ -50,6 +50,19 @@
 }
 
 
+.modalDeCarta{
+    color: black;
+    text-decoration: none;
+}
+
+.modalDeCarta :hover{
+    color: black;
+}
+
+.estrellas{
+    pointer-events: none;
+}
+
 @media (max-width: 1920px){
     .items{
         margin-left: -5%;
