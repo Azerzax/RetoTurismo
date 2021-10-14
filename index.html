@@ -9,6 +9,7 @@
 
     <!-- Libreria para las estrellas -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 
     <!--Boostrap-->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -21,7 +22,7 @@
 <body>
   <div class="container justify-content-center">
     <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <nav class="navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="/">Agencia de Viajes</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_navbar" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,178 +45,196 @@
           </nav>
     </header>
 
-  <!---------------------MOTOR DE BUSQUEDA---------------------------->
-  <div id="motor_busqueda">
+    <!---------------------MOTOR DE BUSQUEDA---------------------------->
+    <div id="motor_busqueda">
 
 
-    <div class="text-center mt-5 mb-3">
-      <h2>Tu viaje comienza aquí</h2>
+      <div class="text-center mt-5 mb-3">
+        <h2>Tu viaje comienza aquí</h2>
+      </div>
+      
+
+      <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-idavuelta" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Ida y vuelta</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-ida" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Sólo ida</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-varios" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Varios destinos</button>
+        </li>    
+      </ul>  
+
+      <div class="tab-content" id="pills-tabContent">
+
+        <div class="tab-pane fade show active" id="pills-idavuelta" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="container-fluid">
+            <form>
+              <div class="row mt-5">
+
+                <div class="col-3" >
+                  <div>Salida</div>
+                  <input id="sal1" type="text" class="form-control" placeholder="Desde">
+                </div>
+
+                <div class="col-3">
+                  <div>Destino</div>
+                  <input id="dest1" type="text" class="form-control" placeholder="Destino">
+                </div>
+
+                <div class="col-2">
+                  <div>Ida</div>
+                  <input id="ida1" type="date" class="form-control" >
+                </div>
+
+                <div class="col-2">
+                  <div>Vuelta</div>
+                  <input id="vuelt1" type="date"  class="form-control" >
+                </div>
+
+                <div class="col-2">
+                  <div>Pasajeros</div>
+                  <input id="pasaj1" type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
+                </div>  
+
+              </div>
+
+              <div class="text-center mt-3">
+                <button type="button" id="buscar1" class="btn btn-primary">Buscar</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-ida" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <div class="container-fluid ">
+            <form>
+              <div class="row mt-5">
+
+                <div class="col-4" >
+                  <div>Salida</div>
+                  <input  type="text" class="form-control" placeholder="Desde">
+                </div>
+
+                <div class="col-4">
+                  <div>Destino</div>
+                  <input type="text" class="form-control"  placeholder="Destino">
+                </div>
+
+                <div class="col-2">
+                  <div>Fecha</div>
+                  <input type="date" class="form-control" >
+                </div>
+
+                <div class="col-2">
+                  <div>Pasajeros</div>
+                  <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
+                </div>  
+
+              </div>
+
+              <div class="text-center mt-3">
+                <button class="btn btn-primary">Buscar</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="pills-varios" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <div class="container-fluid justify-content-center">
+            <form>
+              <div class="row mt-5">
+
+                <div class="col-3" >
+                  <input  type="text" class="form-control"  placeholder="Desde">
+                </div>
+
+                <div class="col-3">
+                  <input type="text" class="form-control"  placeholder="Destino">
+                </div>
+
+                <div class="col-2">
+                  <input type="date" class="form-control"  >
+                </div>
+
+                <div class="col-2">
+                  <input type="date" class="form-control"  >
+                </div>
+
+                <div class="col-2">
+                  <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
+                </div>  
+
+              </div>
+
+              <div class="text-center mt-3">
+                <button class="btn btn-primary">Buscar</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
     </div>
-    
-
-    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-idavuelta" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Ida y vuelta</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-ida" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Sólo ida</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-varios" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Varios destinos</button>
-      </li>    
-    </ul>  
-
-    <div class="tab-content" id="pills-tabContent">
-
-      <div class="tab-pane fade show active" id="pills-idavuelta" role="tabpanel" aria-labelledby="pills-home-tab">
-        <div class="container-fluid">
-          <form>
-            <div class="row mt-5">
-
-              <div class="col-3" >
-                <div>Salida</div>
-                <input id="sal1" type="text" class="form-control" placeholder="Desde">
-              </div>
-
-              <div class="col-3">
-                <div>Destino</div>
-                <input id="dest1" type="text" class="form-control" placeholder="Destino">
-              </div>
-
-              <div class="col-2">
-                <div>Ida</div>
-                <input id="ida1" type="date" class="form-control" >
-              </div>
-
-              <div class="col-2">
-                <div>Vuelta</div>
-                <input id="vuelt1" type="date"  class="form-control" >
-              </div>
-
-              <div class="col-2">
-                <div>Pasajeros</div>
-                <input id="pasaj1" type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
-              </div>  
-
-            </div>
-
-            <div class="text-center mt-3">
-              <button type="button" id="buscar1" class="btn btn-primary">Buscar</button>
-            </div>
-
-          </form>
-        </div>
-      </div>
-
-      <div class="tab-pane fade" id="pills-ida" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <div class="container-fluid ">
-          <form>
-            <div class="row mt-5">
-
-              <div class="col-4" >
-                <div>Salida</div>
-                <input  type="text" class="form-control" placeholder="Desde">
-              </div>
-
-              <div class="col-4">
-                <div>Destino</div>
-                <input type="text" class="form-control"  placeholder="Destino">
-              </div>
-
-              <div class="col-2">
-                <div>Fecha</div>
-                <input type="date" class="form-control" >
-              </div>
-
-              <div class="col-2">
-                <div>Pasajeros</div>
-                <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
-              </div>  
-
-            </div>
-
-            <div class="text-center mt-3">
-              <button class="btn btn-primary">Buscar</button>
-            </div>
-
-          </form>
-        </div>
-      </div>
-
-      <div class="tab-pane fade" id="pills-varios" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <div class="container-fluid justify-content-center">
-          <form>
-            <div class="row mt-5">
-
-              <div class="col-3" >
-                <input  type="text" class="form-control"  placeholder="Desde">
-              </div>
-
-              <div class="col-3">
-                <input type="text" class="form-control"  placeholder="Destino">
-              </div>
-
-              <div class="col-2">
-                <input type="date" class="form-control"  >
-              </div>
-
-              <div class="col-2">
-                <input type="date" class="form-control"  >
-              </div>
-
-              <div class="col-2">
-                <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
-              </div>  
-
-            </div>
-
-            <div class="text-center mt-3">
-              <button class="btn btn-primary">Buscar</button>
-            </div>
-
-          </form>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
 
 
 
-  <div class="modal fade" id="modalPasajeros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Adultos</p>
-          <input type="number" name="adultos" value="1" id="pasajerosA">
-          <p class="mt-3">Niños</p>
-          <input type="number" name="adultos" value="1" id="pasajerosN">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="pasajerosSave">Listo</button>
+    <div class="modal fade" id="modalPasajeros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Adultos</p>
+            <input type="number" name="adultos" value="1" id="pasajerosA">
+            <p class="mt-3">Niños</p>
+            <input type="number" name="adultos" value="1" id="pasajerosN">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="pasajerosSave">Listo</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    <!---------------------MOTOR DE BUSQUEDA---------------------------->
 
-  <!---------------------MOTOR DE BUSQUEDA---------------------------->
+    <!-- CUERPO -->
 
-  <!-- CUERPO -->
+    <div id="vuelos" class="my-5">
 
-  <div id="vuelos" class="my-5">
-
-    <div class="vuelo row">
-      <div class="col"><!--Info-->
-        <div class="row py-2"> <!--Ida-->
-          <img src="img/banner.png" class="col-4" width="100%">
-          <div class="col-8 d-flex justify-content-evenly">
-            <div class="d-flex flex-column">
+      <div class="vuelo row">
+        <div class="col"><!--Info-->
+          <div class="row py-2"> <!--Ida-->
+            <img src="img/banner.png" class="col-4" width="100%">
+            <div class="col-8 d-flex justify-content-evenly">
+              <div class="d-flex flex-column">
+                <h3>00:00</h3>
+                <h3>MAD</h3>
+              </div>
+              <div class="d-flex flex-column">
+                <p>0h00min</p>
+                <hr>
+                <p>Directo</p>
+              </div>
+              <div class="d-flex flex-column">
+                <h3>00:00</h3>
+                <h3>FRA</h3>
+              </div>
+            </div>
+          
+          </div>
+          <div class="row py-2"> <!--Vuelta-->
+            <img src="img/banner.png" class="col-4" width="100%">
+            <div class="col-8 d-flex justify-content-evenly">
+              <div class="d-flex flex-column">
               <h3>00:00</h3>
               <h3>MAD</h3>
             </div>
@@ -228,36 +247,17 @@
               <h3>00:00</h3>
               <h3>FRA</h3>
             </div>
-          </div>
-        
-        </div>
-        <div class="row py-2"> <!--Vuelta-->
-          <img src="img/banner.png" class="col-4" width="100%">
-          <div class="col-8 d-flex justify-content-evenly">
-             <div class="d-flex flex-column">
-            <h3>00:00</h3>
-            <h3>MAD</h3>
-          </div>
-          <div class="d-flex flex-column">
-            <p>0h00min</p>
-            <hr>
-            <p>Directo</p>
-          </div>
-          <div class="d-flex flex-column">
-            <h3>00:00</h3>
-            <h3>FRA</h3>
-          </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-12 col-md-2 bg-light d-flex flex-column justify-content-center"> <!--Precio-->
-        <p class="p-2 py-md-5">000€</p>
-        <button class="btn btn-primary">Comprar</button>
+        <div class="col-12 col-md-2 bg-light d-flex flex-column justify-content-center"> <!--Precio-->
+          <p class="p-2 py-md-5">000€</p>
+          <button class="btn btn-primary">Comprar</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="cuerpo" class="mt-5"> <!--DIV QUE CONTIENE EL CARRUSEL-->
+    <div id="cuerpo" class="mt-5"> <!--DIV QUE CONTIENE EL CARRUSEL-->
 
     <h2 class="text-center">Empieza a planear tu viaje:</h2><br>
 
@@ -289,16 +289,43 @@
 
     </div> <!-- CERRAMOS EL CARRUSEL -->
 
-  </div>
-  <!-- CUERPO -->
-    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
-      <div class="d-flex align-items-center">
-        <span class="text-muted">© 2021 Company, Inc</span>
+    </div>
+    <!-- CERRAMOS EL CUERPO -->
+
+    <!--FOOTER-->
+    <footer class="text-center text-white" >
+      <!-- Grid container -->
+      <div class="container pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Facebook -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://Instagram.com" role="button" data-mdb-ripple-color="dark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/> </svg></i></a>
+          <!-- Twitter -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://Twitter.com" role="button" data-mdb-ripple-color="dark"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/> </svg></i></a>
+          <!-- Google -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://googleplus.com" role="button" data-mdb-ripple-color="dark"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48" style=" fill:#000000;"><path d="M 24 4 C 12.972066 4 4 12.972074 4 24 C 4 35.027926 12.972066 44 24 44 C 35.027934 44 44 35.027926 44 24 C 44 12.972074 35.027934 4 24 4 z M 24 7 C 33.406615 7 41 14.593391 41 24 C 41 33.406609 33.406615 41 24 41 C 14.593385 41 7 33.406609 7 24 C 7 14.593391 14.593385 7 24 7 z M 18.5 15.498047 C 13.783354 15.498047 9.9366721 19.389888 10.001953 24.119141 C 10.065563 28.667242 13.83381 32.434435 18.380859 32.498047 C 22.63668 32.557287 26.216128 29.462024 26.886719 25.388672 C 27.137275 23.867618 25.912424 22.5 24.410156 22.5 L 19.5 22.5 A 1.50015 1.50015 0 1 0 19.5 25.5 L 23.714844 25.5 C 23.047107 27.814778 20.978748 29.535593 18.421875 29.5 C 15.534924 29.459612 13.04039 26.966023 13 24.078125 C 12.95728 20.983378 15.418646 18.498047 18.5 18.498047 C 19.65836 18.498047 20.718207 18.851087 21.603516 19.457031 A 1.50015 1.50015 0 1 0 23.298828 16.982422 C 21.934136 16.048366 20.27364 15.498047 18.5 15.498047 z M 33.476562 19.478516 A 1.50015 1.50015 0 0 0 32 21 L 32 22.5 L 30.5 22.5 A 1.50015 1.50015 0 1 0 30.5 25.5 L 32 25.5 L 32 27 A 1.50015 1.50015 0 1 0 35 27 L 35 25.5 L 36.5 25.5 A 1.50015 1.50015 0 1 0 36.5 22.5 L 35 22.5 L 35 21 A 1.50015 1.50015 0 0 0 33.476562 19.478516 z"></path></svg></a>
+          <!-- Instagram -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://Facebook.com" role="button" data-mdb-ripple-color="dark"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" style=" fill:#000000;"><path d="M 12 2 C 6.4666667 2 2 6.4666667 2 12 C 2 17.533333 6.4666667 22 12 22 C 17.533333 22 22 17.533333 22 12 C 22 6.4666667 17.533333 2 12 2 z M 12 4 C 16.466667 4 20 7.5333333 20 12 C 20 16.057491 17.081555 19.336065 13.199219 19.904297 L 13.199219 14.400391 L 15.5 14.400391 L 15.900391 12 L 13.199219 12 L 13.199219 10.699219 C 13.199219 9.6992188 13.500391 8.8007812 14.400391 8.8007812 L 15.900391 8.8007812 L 15.900391 6.8007812 C 15.600391 6.8007812 15.099609 6.6992187 14.099609 6.6992188 C 11.899609 6.6992188 10.699219 7.8003906 10.699219 10.400391 L 10.699219 12 L 8.4003906 12 L 8.4003906 14.400391 L 10.599609 14.400391 L 10.599609 19.873047 C 6.8178865 19.222761 4 15.987292 4 12 C 4 7.5333333 7.5333333 4 12 4 z"></path></svg></a>
+          <!-- Linkedin -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://Linkedin.com" role="button" data-mdb-ripple-color="dark"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" style=" fill:#000000;"><path d="M 5 3 C 3.9 3 3 3.9 3 5 L 3 19 C 3 20.1 3.9 21 5 21 L 19 21 C 20.1 21 21 20.1 21 19 L 21 5 C 21 3.9 20.1 3 19 3 L 5 3 z M 5 5 L 19 5 L 19 19 L 5 19 L 5 5 z M 7.8007812 6.3007812 C 6.9007812 6.3007812 6.4003906 6.8 6.4003906 7.5 C 6.4003906 8.2 6.8992188 8.6992188 7.6992188 8.6992188 C 8.5992187 8.6992187 9.0996094 8.2 9.0996094 7.5 C 9.0996094 6.8 8.6007813 6.3007812 7.8007812 6.3007812 z M 6.5 10 L 6.5 17 L 9 17 L 9 10 L 6.5 10 z M 11.099609 10 L 11.099609 17 L 13.599609 17 L 13.599609 13.199219 C 13.599609 12.099219 14.499219 11.900391 14.699219 11.900391 C 14.899219 11.900391 15.599609 12.099219 15.599609 13.199219 L 15.599609 17 L 18 17 L 18 13.199219 C 18 10.999219 17.000781 10 15.800781 10 C 14.600781 10 13.899609 10.4 13.599609 11 L 13.599609 10 L 11.099609 10 z"></path></svg></a>
+          <!-- Github -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com" role="button" data-mdb-ripple-color="dark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></i></a>
+        </section>
+        <!-- Section: Social media -->
       </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center text-dark p-3">
+        © 2020 Collaboration with Bootstrap 5
+      </div>
+      <!-- Copyright -->
     </footer>
+    <!--FINAL FOOTER -->
 
+  </div>
+  <!-- CERRAMOS EL CONTAINER -->
 
-</div>
   <!--MODALS-->
   <div class="modal fade" id="login" tabindex="-1">
     <div class="modal-dialog">
@@ -385,7 +412,6 @@
         </div>
       </div>
     </div>
-  
   </div>
 
   <!---------------------MODAL IÑIGO----------------------->
@@ -408,10 +434,10 @@
   </div>
   <!---------------------MODALS---------------------------->
 
-    <!--JAVASCRIPT-->
-    <script src="/js/jquery-3.6.0.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/index.js"></script>
+  <!--JAVASCRIPT-->
+  <script src="/js/jquery-3.6.0.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/index.js"></script>
 
 </body>
 </html>
