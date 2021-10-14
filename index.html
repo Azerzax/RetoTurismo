@@ -290,6 +290,53 @@
     </div> <!-- CERRAMOS EL CARRUSEL -->
 
   </div>
+
+  <div id="map" class="row mt-5 text-center">
+    
+    <ul class="nav nav-pills row mx-auto p-0" id="pills-tab" role="tablist">
+      <li class="nav-item col-3" role="presentation">
+        <button class="nav-link w-100 active" data-bs-toggle="pill" data-bs-target="#pills_VueloMap">Aeropuertos</button>
+      </li>
+      <li class="nav-item col" role="presentation">
+        <button class="nav-link w-100" data-bs-toggle="pill" data-bs-target="#pills_Buscador">Buscador</button>
+      </li>
+      <li class="nav-item col-3" role="presentation">
+        <button class="nav-link w-100" data-bs-toggle="pill" data-bs-target="#pills_HotelMap">Hoteles</button>
+      </li>
+    </ul>
+    <hr>
+    <div class="tab-content">
+      
+      <div class="tab-pane fade show active px-3" id="pills_VueloMap">
+        <div class="map-responsive">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3576766.2983396337!2d-4.976015890941004!3d39.25502603180341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1saeropuertos!5e0!3m2!1ses!2ses!4v1634194252100!5m2!1ses!2ses"></iframe>
+        </div>
+      </div>
+
+      <div class="tab-pane fade show px-3 position-relative" id="pills_Buscador">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Buscador" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+        </div>
+        <div class="map-responsive">
+          <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51329894.23569939!2d1.8812505881005894!3d38.25797322319918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1634198659160!5m2!1ses!2ses"></iframe>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="tab-pane fade px-3" id="pills_HotelMap">
+        <div class="map-responsive">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d11622.31709200391!2d-2.9425972640664018!3d43.26023871618573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sBilbao%20hoteles!5e0!3m2!1ses!2ses!4v1634194038393!5m2!1ses!2ses"></iframe>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  </div>
+
   <!-- CUERPO -->
     <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
       <div class="d-flex align-items-center">
