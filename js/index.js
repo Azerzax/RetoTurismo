@@ -235,15 +235,21 @@ function setPasajeros() {
 function buscarVuelos() {
   divVuelos.innerHTML="";
   var salida = document.getElementById("sal1").value;
-  var dest = document.getElementById("dest1").value;
+  var destino = document.getElementById("dest1").value;
   var ida = document.getElementById("ida1").value;
   var vuelta = document.getElementById("vuelt1").value;
   var pasajerosA = document.getElementById("pasajerosA").value;
   var pasajerosN = document.getElementById("pasajerosN").value;
 
+
+  
+  var cantidadAdultos=parseInt(pasajerosA);
+  
+  var cantidadNiños=parseInt(pasajerosN);
+
   
 
-  if (salida=="" || dest=="" || ida=="" || vuelta=="" || pasajerosA=="" || pasajerosN=="") {
+  if (salida=="" || destino=="" || ida=="" || vuelta=="" || pasajerosA=="" || pasajerosN=="") {
     alert("Faltan campos por rellenar");
 
   }else if (Date.parse(ida)>Date.parse(vuelta)) {
@@ -251,31 +257,122 @@ function buscarVuelos() {
 
   }else {
     var flagIda=false;
-    var flagVuelta=false
+    var flagVuelta=false;
+
+    var vuelosIda=new Array();
+    var vuelosVuelta=new Array();
 
     JSON_bbdd['vuelos'].forEach(element => {
+      var ubicaciones=element["ubicacion"].split("-");
+      var ubicSalida=ubicaciones[0];
+      var ubicDestino=ubicaciones[1];
       var fecha = element["Fecha"].split(",");
-      var precios = element["precio"].split("-");
       
-      if (element["ubicacion"].toUpperCase().includes(salida.toUpperCase()) && element["ubicacion"].toUpperCase().includes(dest.toUpperCase()) & (fecha[0]==ida || fecha[0]==vuelta) ){
-        var precioAdulto=parseInt(precios[0]);
-        var cantidadAdultos=parseInt(pasajerosA);
-        var precioNiño=parseInt(precios[1]);
-        var cantidadNiños=parseInt(pasajerosN);
-
+      
+      if (ubicSalida.toUpperCase().includes(salida.toUpperCase()) && ubicDestino.toUpperCase().includes(destino.toUpperCase())) {
         if (fecha[0]==ida) {
           flagIda=true;
-        }else if (fecha[0]==vuelta) {
+          vuelosIda.push(element);
+        }       
+      }else if (ubicDestino.toUpperCase().includes(salida.toUpperCase()) && ubicSalida.toUpperCase().includes(destino.toUpperCase())) {
+        if(fecha[0]==vuelta) {
           flagVuelta=true;
+          vuelosVuelta.push(element);
         }
-
-        divVuelos.innerHTML+=element["ubicacion"]+"<br>";     
-        divVuelos.innerHTML+="Precio: "+  ((precioAdulto*cantidadAdultos)+(precioNiño*cantidadNiños)) +" <br> " ;
-        
       }
-  
+
     });
+
+
+    if (flagIda && flagVuelta) {
+      vuelosIda.forEach(vueloIda => {
+
+        var ubicacionesI=vueloIda.ubicacion.split("-");
+        var ubicSalidaI=ubicacionesI[0].split(",");
+        var ubicDestinoI=ubicacionesI[1].split(",");
+        var fechaI = vueloIda.Fecha.split(",");
+
+        var preciosI = vueloIda.precio.split("-");
+        var precioAdultoI=parseInt(preciosI[0]);
+        var precioNiñoI=parseInt(preciosI[1]);
+
+        vuelosVuelta.forEach(vueloVuelta => {
+
+          var ubicacionesV=vueloVuelta.ubicacion.split("-");
+          var ubicSalidaV=ubicacionesV[0].split(",");
+          var ubicDestinoV=ubicacionesV[1].split(",");
+          var fechaV = vueloVuelta.Fecha.split(",");
+
+          var preciosV = vueloVuelta.precio.split("-");
+          var precioAdultoV=parseInt(preciosV[0]);
+          var precioNiñoV=parseInt(preciosV[1]);
+
+          divVuelos.innerHTML+="<div class='vuelo row'>"
+                              +    "<div class='col'><!--Info-->"
+                            
+                            
+                              +      "<div class='row py-2'> <!--Ida-->"
+                              +        "<img src='img/"+vueloIda.img+"' class='col-4' width='100%'>"
+                              +        "<div class='col-8 d-flex justify-content-evenly'>"
+                              +         " <div class='d-flex flex-column'>"
+                              +            "<h4>"+fechaI[1]+"</h4>"
+                              +            "<h4>"+ubicSalidaI[1]+"</h4>"
+                              +          "</div>"
+                              +          "<div class='d-flex flex-column'>"
+                              +           " <p>0h00min</p>"
+                              +            "<hr>"
+                              +            "<p>Directo</p>"
+                              +          "</div>"
+                              +          "<div class='d-flex flex-column'>"
+                              +            "<h4>"+fechaI[2]+"</h4>"
+                              +            "<h4>"+ubicDestinoI[1]+"</h4>"
+                              +          "</div>"
+                              +      "</div>"
+                              +      "</div>"
+                            
+                            
+                              +      "<div class='row py-2'> <!--Vuelta-->"
+                              +        "<img src='img/"+vueloVuelta.img+"' class='col-4' width='100%'>"
+                              +        "<div class='col-8 d-flex justify-content-evenly'>"
+                              +          "<div class='d-flex flex-column'>"
+                              +          "<h4>"+fechaV[1]+"</h4>"
+                              +          "<h4>"+ubicSalidaV[1]+"</h4>"
+                              +        "</div>"
+                              +        "<div class='d-flex flex-column'>"
+                              +          "<p>0h00min</p>"
+                              +         "<hr>"
+                              +          "<p>Directo</p>"
+                              +        "</div>"
+                              +        "<div class='d-flex flex-column'>"
+                              +          "<h4>"+fechaV[2]+"</h4>"
+                              +          "<h4>"+ubicDestinoV[1]+"</h4>"
+                              +        "</div>"
+                              +        "</div>"
+                              +      "</div>"
+                            
+                            
+                              +    "</div>"
+                              +    "<div class='col-12 col-md-2 bg-light d-flex flex-column justify-content-center'> <!--Precio-->"
+                              +      "<p class='p-2 py-md-5'>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€ </p>"
+                              +      "<button class='btn btn-primary'>Comprar</button>"
+                              +    "</div>"
+                              +  "</div> <br> <br> <br> <br>"
+        });
+      });
+
+    }else{
+      divVuelos.innerHTML+="No hay resultados";
+    }
     
+
+    /*
+        
+
+    divVuelos.innerHTML+="Precio: "+  ((precioAdulto*cantidadAdultos)+(precioNiño*cantidadNiños)) +" <br> " ;
+    
+    */
+
+    /*
     if (flagVuelta==false && flagIda==false) {
       divVuelos.innerHTML+="No se han encontrado resultados";
     }else if (flagVuelta==true && flagIda==false) {
@@ -283,6 +380,8 @@ function buscarVuelos() {
     }else if (flagVuelta==false && flagIda==true) {
       divVuelos.innerHTML+="No se han encontrado vuelos de vuelta";
     }
+
+    */
     
   }
 
