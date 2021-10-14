@@ -241,20 +241,52 @@ function buscarVuelos() {
   var pasajerosA = document.getElementById("pasajerosA").value;
   var pasajerosN = document.getElementById("pasajerosN").value;
 
-  JSON_bbdd['vuelos'].forEach(element => {
-    var fecha = element["Fecha"].split(",");
-    var precios = element["precio"].split("-");
-    console.log(fecha[0]);
-    console.log(ida);
-    if (element["ubicacion"].toUpperCase().includes(salida.toUpperCase()) && element["ubicacion"].toUpperCase().includes(dest.toUpperCase()) && (fecha[0]==ida || fecha[0]==vuelta )) {
-      divVuelos.innerHTML+=element["ubicacion"]+"<br>";
-      var precioAdulto=parseInt(precios[0]);
-      var cantidadAdultos=parseInt(pasajerosA);
-      var precioNiño=parseInt(precios[1]);
-      var cantidadNiños=parseInt(pasajerosN);
-      divVuelos.innerHTML+="Precio: "+  ((precioAdulto*cantidadAdultos)+(precioNiño*cantidadNiños)) +" <br> " ;
+  
+
+  if (salida=="" || dest=="" || ida=="" || vuelta=="" || pasajerosA=="" || pasajerosN=="") {
+    alert("Faltan campos por rellenar");
+
+  }else if (Date.parse(ida)>Date.parse(vuelta)) {
+    alert("La vuelta no puede ser antes que la ida")
+
+  }else {
+    var flagIda=false;
+    var flagVuelta=false
+
+    JSON_bbdd['vuelos'].forEach(element => {
+      var fecha = element["Fecha"].split(",");
+      var precios = element["precio"].split("-");
+      
+      if (element["ubicacion"].toUpperCase().includes(salida.toUpperCase()) && element["ubicacion"].toUpperCase().includes(dest.toUpperCase()) & (fecha[0]==ida || fecha[0]==vuelta) ){
+        var precioAdulto=parseInt(precios[0]);
+        var cantidadAdultos=parseInt(pasajerosA);
+        var precioNiño=parseInt(precios[1]);
+        var cantidadNiños=parseInt(pasajerosN);
+
+        if (fecha[0]==ida) {
+          flagIda=true;
+        }else if (fecha[0]==vuelta) {
+          flagVuelta=true;
+        }
+
+        divVuelos.innerHTML+=element["ubicacion"]+"<br>";     
+        divVuelos.innerHTML+="Precio: "+  ((precioAdulto*cantidadAdultos)+(precioNiño*cantidadNiños)) +" <br> " ;
+        
+      }
+  
+    });
+    
+    if (flagVuelta==false && flagIda==false) {
+      divVuelos.innerHTML+="No se han encontrado resultados";
+    }else if (flagVuelta==true && flagIda==false) {
+      divVuelos.innerHTML+="No se han encontrado vuelos de ida";
+    }else if (flagVuelta==false && flagIda==true) {
+      divVuelos.innerHTML+="No se han encontrado vuelos de vuelta";
     }
-  });
+    
+  }
+
+  
 
 }
 
