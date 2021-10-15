@@ -1,3 +1,25 @@
+#body{
+    
+}
+
+#logo{
+    width: 25vw;
+}
+
+#motor_busqueda{
+    margin-top: 3vw;
+    padding: 1vw;
+    background-color: #76DBD1;
+}
+
+
+
+#formBuscador{
+    background-color: #57A99A;
+}
+
+
+
 .ubicacion{
     display: grid;
     grid-template-columns: 16px auto;
@@ -23,10 +45,6 @@
 
 .precio p{
     color: rgba(0, 0, 0, 0.600);
-}
-
-.cartas{
-    width: 18rem;
 }
 
 .a{
@@ -74,6 +92,8 @@
     border: none;
 }
 
+
+
 .map-responsive{
 
     overflow:hidden;
@@ -98,6 +118,11 @@
 
     position:absolute;
 
+}
+
+#map{
+    width: 100%;
+    padding: 5vw;
 }
 
 @media (max-width: 1920px){

@@ -18,197 +18,205 @@
 
 
 </head>
-<body>
-  <div class="container justify-content-center">
-    <header>
-        <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="/">Agencia de Viajes</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_navbar" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+<body id="body">
+  
+  <header>
+    <nav class="navbar navbar-expand-md navbar-light ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><img id="logo" src="img/logo2.png"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_navbar" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse row text-end" id="collapse_navbar">
+            <form>
+              <div class="dropdown position-relative">
+                <button id="btnLogin" type="button" class="btn btn-primary mt-2 col-12 col-md-3 col-2" data-bs-toggle="modal" data-bs-target="#login">
+                  Login
               </button>
-        
-              <div class="collapse navbar-collapse row text-end" id="collapse_navbar">
-                <form>
-                  <div class="dropdown position-relative">
-                    <button id="btnLogin" type="button" class="btn btn-primary mt-2 col-12 col-md-3 col-2" data-bs-toggle="modal" data-bs-target="#login">
-                      Login
-                  </button>
-                    <div class="dropdown-menu dropdown-menu-end dropdown-login col-3">
-                      <button id="btnLogout" class="dropdown-item text-center" href="#">Logout</button>
-                    </div>
-                  </div>
-                </form>
+                <div class="dropdown-menu dropdown-menu-end dropdown-login col-3">
+                  <button id="btnLogout" class="dropdown-item text-center" href="#">Logout</button>
+                </div>
               </div>
-            </div>
-          </nav>
-    </header>
+            </form>
+          </div>
+      </div>
+    </nav>
+  </header>
 
   <!---------------------MOTOR DE BUSQUEDA---------------------------->
+
   <div id="motor_busqueda">
 
 
-    <div class="text-center mt-5 mb-3">
-      <h2>Tu viaje comienza aquí</h2>
+    <div class="text-center mt-3 mb-3">
+      <p>Tu viaje comienza aquí</p>
     </div>
     
 
-    <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-idavuelta" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Ida y vuelta</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-ida" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Sólo ida</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-varios" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Varios destinos</button>
-      </li>    
-    </ul>  
+    
+    
+    <div id="formBuscador">
 
-    <div class="tab-content" id="pills-tabContent">
+      <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-idavuelta" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Ida y vuelta</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-ida" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Sólo ida</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-varios" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Varios destinos</button>
+        </li>    
+      </ul>
 
-      <div class="tab-pane fade show active" id="pills-idavuelta" role="tabpanel" aria-labelledby="pills-home-tab">
-        <div class="container-fluid">
-          <form>
-            <div class="row mt-5">
+      <div class="tab-content" id="pills-tabContent">
 
-              <div class="col-3" >
-                <div>Salida</div>
-                <input id="sal1" type="text" class="form-control" placeholder="Desde">
+        <div class="tab-pane fade show active" id="pills-idavuelta" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="container-fluid">
+            <form>
+              <div class="row mt-5">
+
+                <div class="col-3" >
+                  <div>Salida</div>
+                  <input id="sal1" type="text" class="form-control" placeholder="Desde">
+                </div>
+
+                <div class="col-3">
+                  <div>Destino</div>
+                  <input id="dest1" type="text" class="form-control" placeholder="Destino">
+                </div>
+
+                <div class="col-2">
+                  <div>Ida</div>
+                  <input id="ida1" type="date" class="form-control" >
+                </div>
+
+                <div class="col-2">
+                  <div>Vuelta</div>
+                  <input id="vuelt1" type="date"  class="form-control" >
+                </div>
+
+                <div class="col-2">
+                  <div>Pasajeros</div>
+                  <input id="pasaj1" type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
+                </div>  
+
               </div>
 
-              <div class="col-3">
-                <div>Destino</div>
-                <input id="dest1" type="text" class="form-control" placeholder="Destino">
+              <div class="text-center mt-3">
+                <button type="button" id="buscar1" class="btn btn-primary">Buscar</button>
               </div>
 
-              <div class="col-2">
-                <div>Ida</div>
-                <input id="ida1" type="date" class="form-control" >
-              </div>
-
-              <div class="col-2">
-                <div>Vuelta</div>
-                <input id="vuelt1" type="date"  class="form-control" >
-              </div>
-
-              <div class="col-2">
-                <div>Pasajeros</div>
-                <input id="pasaj1" type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
-              </div>  
-
-            </div>
-
-            <div class="text-center mt-3">
-              <button type="button" id="buscar1" class="btn btn-primary">Buscar</button>
-            </div>
-
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
 
-      <div class="tab-pane fade" id="pills-ida" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <div class="container-fluid ">
-          <form>
-            <div class="row mt-5">
+        <div class="tab-pane fade" id="pills-ida" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <div class="container-fluid ">
+            <form>
+              <div class="row mt-5">
 
-              <div class="col-4" >
-                <div>Salida</div>
-                <input  type="text" class="form-control" placeholder="Desde">
+                <div class="col-4" >
+                  <div>Salida</div>
+                  <input  type="text" class="form-control" placeholder="Desde">
+                </div>
+
+                <div class="col-4">
+                  <div>Destino</div>
+                  <input type="text" class="form-control"  placeholder="Destino">
+                </div>
+
+                <div class="col-2">
+                  <div>Fecha</div>
+                  <input type="date" class="form-control" >
+                </div>
+
+                <div class="col-2">
+                  <div>Pasajeros</div>
+                  <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
+                </div>  
+
               </div>
 
-              <div class="col-4">
-                <div>Destino</div>
-                <input type="text" class="form-control"  placeholder="Destino">
+              <div class="text-center mt-3">
+                <button class="btn btn-primary">Buscar</button>
               </div>
 
-              <div class="col-2">
-                <div>Fecha</div>
-                <input type="date" class="form-control" >
-              </div>
-
-              <div class="col-2">
-                <div>Pasajeros</div>
-                <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
-              </div>  
-
-            </div>
-
-            <div class="text-center mt-3">
-              <button class="btn btn-primary">Buscar</button>
-            </div>
-
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
 
-      <div class="tab-pane fade" id="pills-varios" role="tabpanel" aria-labelledby="pills-profile-tab">
-        <div class="container-fluid justify-content-center">
-          <form>
-            <div class="row mt-5">
+        <div class="tab-pane fade" id="pills-varios" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <div class="container-fluid justify-content-center">
+            <form>
+              <div class="row mt-5">
 
-              <div class="col-3" >
-                <input  type="text" class="form-control"  placeholder="Desde">
+                <div class="col-3" >
+                  <input  type="text" class="form-control"  placeholder="Desde">
+                </div>
+
+                <div class="col-3">
+                  <input type="text" class="form-control"  placeholder="Destino">
+                </div>
+
+                <div class="col-2">
+                  <input type="date" class="form-control"  >
+                </div>
+
+                <div class="col-2">
+                  <input type="date" class="form-control"  >
+                </div>
+
+                <div class="col-2">
+                  <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
+                </div>  
+
               </div>
 
-              <div class="col-3">
-                <input type="text" class="form-control"  placeholder="Destino">
+              <div class="text-center mt-3">
+                <button class="btn btn-primary">Buscar</button>
               </div>
 
-              <div class="col-2">
-                <input type="date" class="form-control"  >
-              </div>
-
-              <div class="col-2">
-                <input type="date" class="form-control"  >
-              </div>
-
-              <div class="col-2">
-                <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
-              </div>  
-
-            </div>
-
-            <div class="text-center mt-3">
-              <button class="btn btn-primary">Buscar</button>
-            </div>
-
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
 
-    </div>
-
-  </div>
-
-
-
-  <div class="modal fade" id="modalPasajeros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Adultos</p>
-          <input type="number" name="adultos" value="1" id="pasajerosA">
-          <p class="mt-3">Niños</p>
-          <input type="number" name="adultos" value="1" id="pasajerosN">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="pasajerosSave">Listo</button>
-        </div>
       </div>
     </div>
+
+  
+
+
+
+    <div class="modal fade" id="modalPasajeros" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Adultos</p>
+            <input type="number" name="adultos" value="1" id="pasajerosA">
+            <p class="mt-3">Niños</p>
+            <input type="number" name="adultos" value="1" id="pasajerosN">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="pasajerosSave">Listo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!---------------------MOTOR DE BUSQUEDA---------------------------->
 
   <!-- CUERPO -->
 
-  <div id="vuelos" class="my-5">
+  <div id="vuelos" class="p-3 mt-5">
 
     <div class="vuelo row">
       <div class="col"><!--Info-->
@@ -264,7 +272,7 @@
   
   </div>
 
-  <div id="cuerpo" class="mt-5"> <!--DIV QUE CONTIENE EL CARRUSEL-->
+  <div id="cuerpo" class="mt-5 p-3"> <!--DIV QUE CONTIENE EL CARRUSEL-->
 
     <h2 class="text-center">Empieza a planear tu viaje:</h2><br>
 
@@ -298,7 +306,7 @@
 
   </div>
 
-  <div id="map" class="row mt-5 text-center">
+  <div id="map"  class="row mt-5 text-center">
     
     <ul class="nav nav-pills row mx-auto p-0" id="pills-tab" role="tablist">
       <li class="nav-item col-3" role="presentation">
@@ -311,7 +319,9 @@
         <button class="nav-link w-100" data-bs-toggle="pill" data-bs-target="#pills_HotelMap">Hoteles</button>
       </li>
     </ul>
+    
     <hr>
+
     <div class="tab-content">
       
       <div class="tab-pane fade show active px-3" id="pills_VueloMap">
@@ -342,14 +352,12 @@
     </div>
   </div>
 
-  </div>
-
   <!-- CUERPO -->
-    <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
-      <div class="d-flex align-items-center">
-        <span class="text-muted">© 2021 Company, Inc</span>
-      </div>
-    </footer>
+  <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
+    <div class="d-flex align-items-center">
+      <span class="text-muted">© 2021 Company, Inc</span>
+    </div>
+  </footer>
 
 
 </div>
