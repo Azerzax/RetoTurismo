@@ -1,3 +1,43 @@
+body{
+    background-color: #ECF4F3 !important;
+    color: #ECF4F3 !important;
+}
+
+.container{
+    margin-top: 1%;
+    background-color: #57A99A !important;
+    border-radius: 2%;
+    color: #ECF4F3 !important;
+}
+
+
+header > nav{
+    background-color: #57A99A !important;
+    border-top-left-radius: 7% !important;
+    border-top-right-radius: 7% !important;
+}
+
+header > nav > div > a{
+    font-size: xx-large !important;
+    font-weight: bold;
+    color: #ECF4F3 !important;
+}
+
+button{
+    background-color: #ECF4F3 !important;
+    border-color: #ECF4F3 !important;
+    color: rgb(70, 69, 69) !important;
+}
+
+button:hover{
+    background-color: #76DBD1 !important;
+    color: black !important;
+}
+
+.vuelo > div{
+    background-color: #57A99A !important;
+}
+
 .ubicacion{
     display: grid;
     grid-template-columns: 16px auto;
@@ -15,6 +55,7 @@
 
 .cartas{
     height: 26rem;
+    background-color: #ECF4F3 !important;
 }
 
 .precio h5{
@@ -37,6 +78,10 @@
 .a:hover{
     color: rgb(22, 22, 22);
     text-decoration: underline;
+}
+
+#carouselExampleControls > button{
+    background-color: #57A99A !important;
 }
 
 .botonesN {
@@ -63,6 +108,14 @@
 
 .modalDeCarta :hover{
     color: black;
+}
+
+.modal-title{
+    color: #57A99A !important;
+}
+
+.modal-body{
+    color: #57A99A !important;
 }
 
 .estrellas{

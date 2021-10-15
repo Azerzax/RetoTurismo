@@ -143,7 +143,7 @@ function autoGen(){
 
   for (var i = 0; i < JSON_bbdd['estancias'].length; i++) {
       
-    $('div#'+cont)[0].innerHTML += "<a data-id='"+i+"' data-bs-toggle='modal' data-bs-target='#tarjetaModal' class='modalDeCarta'>"
+    $('div#'+cont)[0].innerHTML += "<a data-id='"+i+"' data-bs-toggle='modal' data-bs-target='#tarjetaModal' class='modalDeCarta col-12 col-sm-4'>"
                                 +   "<div class='card cartas c1 col-4'>"
                                 +     "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='card-img-top'>"
                                 +     "<div class='card-body'>"
