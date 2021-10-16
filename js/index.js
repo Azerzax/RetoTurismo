@@ -216,6 +216,7 @@ function autoGen(){
 
 /*IMRANE SCRIPTS*/
 
+
 var pasajeros=document.querySelectorAll(".pasajeros");
 var pasajerosA=document.getElementById("pasajerosA");
 var pasajerosN=document.getElementById("pasajerosN");
@@ -232,7 +233,18 @@ function setPasajeros() {
   }
 }
 
+
+
+var vuelosIda=new Array();
+var vuelosVuelta=new Array();
+
+
+
 function buscarVuelos() {
+
+  var vuelosIda=new Array();
+  var vuelosVuelta=new Array();
+
   divVuelos.innerHTML="";
   var salida = document.getElementById("sal1").value;
   var destino = document.getElementById("dest1").value;
@@ -259,8 +271,7 @@ function buscarVuelos() {
     var flagIda=false;
     var flagVuelta=false;
 
-    var vuelosIda=new Array();
-    var vuelosVuelta=new Array();
+    
 
     JSON_bbdd['vuelos'].forEach(element => {
       var ubicaciones=element["ubicacion"].split("-");
@@ -357,7 +368,7 @@ function buscarVuelos() {
                                   
                                 +    "<div class=' divprecio col-12 col-md-2 bg-light d-flex flex-column justify-content-center'> <!--Precio-->"
                                 +      "<p class='p-2 py-md-5'>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€</p>"
-                                +      "<button class='btn btn-primary'>Comprar</button>"
+                                +      "<button value='"+vuelosIda.indexOf(vueloIda)+"-"+vuelosVuelta.indexOf(vueloVuelta)+"' class='btn btn-primary'>Reservar</button>"
                                 +    "</div>"
                                     
                                   
