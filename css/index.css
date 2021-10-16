@@ -15,7 +15,38 @@
 
 
 #formBuscador{
+    border: 3px solid #D1EECC;
+    border-radius: 10px;
+    padding: 20px;
     background-color: #57A99A;
+}
+
+#titulomotor{
+    color: white;
+    font-size: 3vw;
+}
+
+.botonMotor{
+    color: white !important;
+    background-color: transparent !important;
+    font-size: 1.3vw;
+   
+}
+
+.botonMotor[aria-selected="false"]{
+    
+    color: rgba(255, 255, 255, 0.822) !important;
+    background-color: transparent !important;
+    font-size: 1.3vw;
+}
+.botonMotor[aria-selected="true"]{
+    font-weight: bold;
+}
+
+.textForm{
+    color: white ;
+    font-weight: lighter;
+    font-size: 1.1vw;
 }
 
 
@@ -92,6 +123,45 @@
     border: none;
 }
 
+.aerolineaImg{
+    margin-left: px;
+    height: 15vw;
+}
+
+.hora{
+    font-size: 2vw;
+}
+.lugar{
+    font-size: 2vw;
+}
+.duracion{
+    font-size: 1vw;
+}
+.infoVuelo{
+   margin-top: 4vw !important; 
+}
+
+#vuelos{
+    border-radius: 10px;
+    background-color: #57A99A;
+}
+
+.vuelo{
+    border: solid 2px #ECF4F3;
+    background-color: #D1EECC;
+    
+}
+
+#resultadosVuelos{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #76DBD1;
+}
+
+.divprecio{
+    background-color: #ECF4F3;
+}
+
 
 
 .map-responsive{
@@ -123,6 +193,11 @@
 #map{
     width: 100%;
     padding: 5vw;
+}
+
+.imgFlecha{
+    margin-top: 12px;
+    height: 5vw;   
 }
 
 @media (max-width: 1920px){
@@ -196,6 +271,30 @@
     .carousel-control-prev-icon{
         margin-left: -8%;
     }
+    
+
+    .vuelo{
+        height: 26vw;
+    }
+
+    .aerolineaImg{
+        height: 23vw;
+    }
+    
+    .hora{
+        font-size: 3vw;
+    }
+    .lugar{
+        font-size: 3vw;
+    }
+    .duracion{
+        font-size: 2vw;
+    }
+    .infoVuelo{
+       margin-top: 6vw !important; 
+    }
+
+    
 }
 
 @media (max-width: 576px){

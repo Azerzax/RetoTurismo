@@ -220,7 +220,7 @@ var pasajeros=document.querySelectorAll(".pasajeros");
 var pasajerosA=document.getElementById("pasajerosA");
 var pasajerosN=document.getElementById("pasajerosN");
 var botonbuscar=document.getElementById("buscar1");
-var divVuelos=document.getElementById("vuelos");
+var divVuelos=document.getElementById("resultadosVuelos");
 
 pasajerosA.value="1";
 pasajerosN.value="0";
@@ -307,66 +307,94 @@ function buscarVuelos() {
           var precioAdultoV=parseInt(preciosV[0]);
           var precioNiñoV=parseInt(preciosV[1]);
 
-          divVuelos.innerHTML+="<div class='vuelo row'>"
-                              +    "<div class='col'><!--Info-->"
-                            
-                            
-                              +      "<div class='row py-2'> <!--Ida-->"
-                              +        "<img src='img/"+vueloIda.img+"' class='col-4' width='100%'>"
-                              +        "<div class='col-8 d-flex justify-content-evenly'>"
-                              +         " <div class='d-flex flex-column'>"
-                              +            "<h4>"+fechaI[1]+"</h4>"
-                              +            "<h4>"+ubicSalidaI[1]+"</h4>"
-                              +          "</div>"
-                              +          "<div class='d-flex flex-column'>"
-                              +           " <p>0h00min</p>"
-                              +            "<hr>"
-                              +            "<p>Directo</p>"
-                              +          "</div>"
-                              +          "<div class='d-flex flex-column'>"
-                              +            "<h4>"+fechaI[2]+"</h4>"
-                              +            "<h4>"+ubicDestinoI[1]+"</h4>"
-                              +          "</div>"
-                              +      "</div>"
-                              +      "</div>"
-                            
-                            
-                              +      "<div class='row py-2'> <!--Vuelta-->"
-                              +        "<img src='img/"+vueloVuelta.img+"' class='col-4' width='100%'>"
-                              +        "<div class='col-8 d-flex justify-content-evenly'>"
-                              +          "<div class='d-flex flex-column'>"
-                              +          "<h4>"+fechaV[1]+"</h4>"
-                              +          "<h4>"+ubicSalidaV[1]+"</h4>"
-                              +        "</div>"
-                              +        "<div class='d-flex flex-column'>"
-                              +          "<p>0h00min</p>"
-                              +         "<hr>"
-                              +          "<p>Directo</p>"
-                              +        "</div>"
-                              +        "<div class='d-flex flex-column'>"
-                              +          "<h4>"+fechaV[2]+"</h4>"
-                              +          "<h4>"+ubicDestinoV[1]+"</h4>"
-                              +        "</div>"
-                              +        "</div>"
-                              +      "</div>"
-                            
-                            
-                              +    "</div>"
-                              +    "<div class='col-12 col-md-2 bg-light d-flex flex-column justify-content-center'> <!--Precio-->"
-                              +      "<p class='p-2 py-md-5'>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€ </p>"
-                              +      "<button class='btn btn-primary'>Comprar</button>"
-                              +    "</div>"
-                              +  "</div> <br> <br> <br> <br>"
+          divVuelos.innerHTML+= "<div id='vuelos' class='p-3 m-1 mb-5 row'>"
+
+                                
+                                +    "<div class='col'><!--Info-->"
+                                  
+                                  
+                                +      "<div class='row py-2 vuelo'> <!--Ida-->"
+                                +        "<img src='img/"+vueloIda.img+"' class='col-4 aerolineaImg' >"
+                                +        "<div class='col-8 d-flex justify-content-evenly infoVuelo'>"
+                                +         "<div class='d-flex flex-column'>"
+                                +            "<p class='hora'>"+fechaI[1]+"</p>"
+                                +            "<p class='lugar'>"+ubicSalidaI[1]+"</p>"
+                                +          "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                            
+                                +           "<img src='img/flecha.png' class='imgFlecha'>"
+                                            
+                                +          "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                +           " <p class='hora'>"+fechaI[2]+"</p>"
+                                +            "<p class='lugar'>"+ubicDestinoI[1]+"</p>"
+                                +          "</div>"
+                                +        "</div>"
+                                +      "</div>"
+                                  
+                                  
+                                +      "<div class='row py-2 vuelo'> <!--Ida-->"
+                                +       "<img src='img/"+vueloVuelta.img+"' class='col-4 aerolineaImg' >"
+                                +        "<div class='col-8 d-flex justify-content-evenly infoVuelo'>"
+                                +          "<div class='d-flex flex-column'>"
+                                +            "<p class='hora'>"+fechaV[1]+"</p>"
+                                +            "<p class='lugar'>"+ubicSalidaV[1]+"</p>"
+                                +          "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                           
+                                +            "<img src='img/flecha.png' class='imgFlecha'>"
+                                            
+                                +         "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                +            "<p class='hora'>"+fechaV[2]+"</p>"
+                                +           " <p class='lugar'>"+ubicDestinoV[1]+"</p>"
+                                +          "</div>"
+                                +        "</div>"
+                                +      "</div>"
+                                  
+                                  
+                                +   " </div>"
+                                  
+                                +    "<div class=' divprecio col-12 col-md-2 bg-light d-flex flex-column justify-content-center'> <!--Precio-->"
+                                +      "<p class='p-2 py-md-5'>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€</p>"
+                                +      "<button class='btn btn-primary'>Comprar</button>"
+                                +    "</div>"
+                                    
+                                  
+                                  
+                                +  "</div>"
+
         });
+
+
       });
 
     }else{
       divVuelos.innerHTML+="No hay resultados";
     }
-    
 
     /*
         
+
+
+    "<div class='row py-2 vuelo'> <!--Ida-->"
+                              +        "<img src='img/"+vueloIda.img+"' class='col-4 aerolineaImg'>"
+                              +        "<div class='col-8 d-flex justify-content-evenly infoVuelo'>"
+                              +         " <div class='d-flex flex-column'>"
+                              +            "<p class='hora'>"+fechaI[1]+"</p>"
+                              +            "<class='lugar'>"+ubicSalidaI[1]+"</p>"
+                              +          "</div>"
+                              +          "<div class='d-flex flex-column'>"
+                              +           "<img src='img/flecha.png' class='imgFlecha'>"
+                              +          "</div>"
+                              +          "<div class='d-flex flex-column'>"
+                              +            "<p class='hora'>"+fechaI[2]+"</p>"
+                              +            "<p class='lugar'>"+ubicDestinoI[1]+"</p>"
+                              +          "</div>"
+                              +      "</div>"
+                              +      "</div>"
+
+
 
     divVuelos.innerHTML+="Precio: "+  ((precioAdulto*cantidadAdultos)+(precioNiño*cantidadNiños)) +" <br> " ;
     
