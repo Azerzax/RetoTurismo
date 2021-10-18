@@ -245,7 +245,7 @@ function buscarVuelos() {
   var vuelosIda=new Array();
   var vuelosVuelta=new Array();
 
-  divVuelos.innerHTML="";
+  
   var salida = document.getElementById("sal1").value;
   var destino = document.getElementById("dest1").value;
   var ida = document.getElementById("ida1").value;
@@ -268,6 +268,8 @@ function buscarVuelos() {
     alert("La vuelta no puede ser antes que la ida")
 
   }else {
+    divVuelos.innerHTML="";
+    document.getElementById("cuerpo2").innerHTML="";
     var flagIda=false;
     var flagVuelta=false;
 
@@ -381,9 +383,70 @@ function buscarVuelos() {
       });
 
 
+      var cont=0;
       for (var i = 0; i < JSON_bbdd['estancias'].length; i++) {
         
         if (JSON_bbdd['estancias'][i]['ubicacion'].toUpperCase().includes(destino.toUpperCase())) {
+          
+          
+
+          if (cont==0) {
+            document.getElementById("cuerpo2").style.display="flex";
+            document.getElementById("cuerpo").style.display="none";
+            document.getElementById("cuerpo2").innerHTML+="<div class='text-center mt-3 mb-3'>"
+                                                      +  "<p id='titulohoteles'>Estancias de interes</p>"
+                                                      + "</div>"
+          }
+          
+          cont++;
+
+          document.getElementById("cuerpo2").innerHTML+="<div class='cartaGrande mt-5 mb-5 col-sm-10 col-md-10 col-lg-10'>"
+					+ "<div class='hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex'>"
+					+	"<div class='hotel-card_img'>"
+							
+          +			"<div class=''>"
+          +       "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='d-block w-100' alt='Hotel Image'>"
+          +			"</div>"
+
+					+	"</div>"
+					+	"<div class='hotel-card_info p-4'>"
+					+		"<div class='d-flex align-items-center mb-2'>"
+					+		"	<h5 class='mb-0 m-2'>Hotel Paradise</h5>"
+					+		"	<div>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+			"</div>"
+					+		"</div>"
+					+		"<div class='d-flex justify-content-between align-items-end'>"
+					+			"<div class='hotel-card_details'>"
+					+				"<div class='ubicacion text-muted mb-2'><img src='img/ubicacion.png'><p class='ms-3' >"+JSON_bbdd['estancias'][i]['ubicacion']+"</p></div>"
+					+				"<div class='mb-2'><span class='badge badge-primary'>4.5</span> <a href='#!' class='text-muted'>(245 ratings & 56 reviews)</a></div>"
+					+				"<div class='amnities d-flex mb-3'>"
+					+					"<img class='m-2' src='img/icons/desk-bell.svg' data-toggle='tooltip' data-placement='top' title='Desk bell' alt='Desk bell'>"
+					+					"<img class='m-2' src='img/icons/single-bed.svg' data-toggle='tooltip' data-placement='top' title='Single Bed' alt='Single Bed'>"
+					+					"<img class='m-2' src='img/icons/towels.svg' data-toggle='tooltip' data-placement='top' title='Towels' alt='Towels'>"
+					+					"<img class='m-2' src='img/icons/wifi.svg' data-toggle='tooltip' data-placement='top' title='Wifi' alt='Wifi'>"
+					+				"</div>"
+					+				"<ul class='hotel-checklist p-0 mb-0'>"
+					+					"<li><i class='fa fa-check text-success'></i> Lorem ipsum dolor</li>"
+					+					"<li><i class='fa fa-check text-success'></i> Cras lectus purus, </li>"
+					+					"<li><i class='fa fa-check text-success'></i> ornare eget congue</li>"
+					+				"</ul>"
+					+			"</div>"
+					+			"<div class='hotel-card_pricing text-center'>"
+					+				"<h3>₹1,300</h3>"
+					
+					+				"<button class='btn btn-primary'>Reservar</button>"
+					+			"</div>"
+					+		"</div>"
+					+	"</div>"
+					+ "</div>"
+				  + "</div>"
+
+          /*
           document.getElementById("cuerpo").innerHTML="<a data-id='"+i+"' data-bs-toggle='modal' data-bs-target='#tarjetaModal' class='modalDeCartaGrande'>"
                                                       +   "<div class='card' style='width: 18rem;'>"
                                                       +     "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='card-img-top'>"
@@ -402,6 +465,7 @@ function buscarVuelos() {
                                                       +     "</div>"
                                                       +    "</div>"
                                                       +  "</a>";
+                                                      */
         }
         
       }

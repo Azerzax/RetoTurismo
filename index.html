@@ -48,13 +48,9 @@
 
   <div id="motor_busqueda">
 
-
     <div class="text-center mt-3 mb-3">
       <p id="titulomotor">Tu viaje comienza aquí</p>
     </div>
-    
-
-    
     
     <div id="formBuscador">
 
@@ -64,9 +60,6 @@
         </li>
         <li class="nav-item" role="presentation">
           <button class="botonMotor nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-ida" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Sólo ida</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="botonMotor nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-varios" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Varios destinos</button>
         </li>    
       </ul>
 
@@ -147,46 +140,6 @@
           </div>
         </div>
 
-        <div class="tab-pane fade" id="pills-varios" role="tabpanel" aria-labelledby="pills-profile-tab">
-          <div class="container-fluid justify-content-center">
-            <form>
-              <div class="row mt-5">
-
-                <div class="col-3" >
-                  <div class="textForm">Salida</div>
-                  <input  type="text" class="form-control"  placeholder="Desde">
-                </div>
-
-                <div class="col-3">
-                  <div class="textForm">Destino</div>
-                  <input type="text" class="form-control"  placeholder="Destino">
-                </div>
-
-                <div class="col-2">
-                  <div class="textForm">Ida</div>
-                  <input type="date" class="form-control"  >
-                </div>
-
-                <div class="col-2">
-                  <div class="textForm">Vuelta</div>
-                  <input type="date" class="form-control"  >
-                </div>
-
-                <div class="col-2">
-                  <div class="textForm">Pasajeros</div>
-                  <input type="button" value="" class="pasajeros form-control" data-bs-toggle="modal" data-bs-target="#modalPasajeros">  
-                </div>  
-
-              </div>
-
-              <div class="text-center mt-3">
-                <button class="btn btn-primary">Buscar</button>
-              </div>
-
-            </form>
-          </div>
-        </div>
-
       </div>
     </div>
 
@@ -218,136 +171,24 @@
   </div>
 
   <!---------------------MOTOR DE BUSQUEDA---------------------------->
+  
 
   <!-- CUERPO -->
   <div id="resultadosVuelos">
     
-    <div id="vuelos" class="p-3 m-1 mb-5 row">
+  </div>
 
-      
-      <div class="col"><!--Info-->
+  <div id="cuerpo2">
 
-
-        <div class="row py-2 vuelo"> <!--Ida-->
-          <img src="img/banner.png" class="col-4 aerolineaImg" >
-          <div class="col-8 d-flex justify-content-evenly infoVuelo">
-            <div class="d-flex flex-column">
-              <p class="hora">00:00</p>
-              <p class="lugar">MAD</p>
-            </div>
-            <div class="d-flex flex-column">
-              
-              <img src="img/flecha.png" class="imgFlecha">
-              
-            </div>
-            <div class="d-flex flex-column">
-              <p class="hora">00:00</p>
-              <p class="lugar">FRA</p>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row py-2 vuelo"> <!--Ida-->
-          <img src="img/banner.png" class="col-4 aerolineaImg" >
-          <div class="col-8 d-flex justify-content-evenly infoVuelo">
-            <div class="d-flex flex-column">
-              <p class="hora">00:00</p>
-              <p class="lugar">MAD</p>
-            </div>
-            <div class="d-flex flex-column">
-              
-              <img src="img/flecha.png" class="imgFlecha">
-              
-            </div>
-            <div class="d-flex flex-column">
-              <p class="hora">00:00</p>
-              <p class="lugar">FRA</p>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div class=" divprecio col-12 col-md-2 bg-light d-flex flex-column justify-content-center"> <!--Precio-->
-        <p class="p-2 py-md-5">000€</p>
-        <button class="btn btn-primary">Comprar</button>
-      </div>
-      
-
-    
-    </div>
-
-
-
-
-    <div id="vuelos" class="p-3 m-1 row">
-
-      
-      <div class="col"><!--Info-->
-
-
-        <div class="row py-2 vuelo"> <!--Ida-->
-          <img src="img/banner.png" class="col-4 aerolineaImg" >
-          <div class="col-8 d-flex justify-content-evenly infoVuelo">
-            <div class="d-flex flex-column">
-              <p class="hora">00:00</p>
-              <p class="lugar">MAD</p>
-            </div>
-            <div class="d-flex flex-column">
-              
-              <img src="img/flecha.png" class="imgFlecha">
-              
-            </div>
-            <div class="d-flex flex-column">
-              <p class="hora">00:00</p>
-              <p class="lugar">FRA</p>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row py-2 vuelo"> <!--Ida-->
-          <img src="img/banner.png" class="col-4 aerolineaImg" >
-          <div class="col-8 d-flex justify-content-evenly infoVuelo">
-            <div class="d-flex flex-column">
-              <p class="hora">00:00</p>
-              <p class="lugar">MAD</p>
-            </div>
-            <div class="d-flex flex-column">
-              
-              <img src="img/flecha.png" class="imgFlecha">
-              
-            </div>
-            <div class="d-flex flex-column">
-              <p class="hora">00:00</p>
-              <p class="lugar">FRA</p>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-
-      <div class=" divprecio col-12 col-md-2 bg-light d-flex flex-column justify-content-center"> <!--Precio-->
-        <p class="p-2 py-md-5">000€</p>
-        <button value="" class="btn btn-primary">Reservar</button>
-      </div>
-      
-
-    
-    </div>
-
-
-    
   </div>
 
   <div id="cuerpo" class="mt-5 p-3"> <!--DIV QUE CONTIENE EL CARRUSEL-->
 
-    <h2 class="text-center">Empieza a planear tu viaje:</h2><br>
+    <div class="text-center mt-3 mb-5">
+      <p id="titulomotor">Reserva tu hotel</p>
+    </div>
 
-    <div id="carouselExampleControls" class="row carousel carousel-fade justify-content-around" data-bs-ride="carousel"> <!-- ABRIMOS CAROUSEL DE CARTAS-->
+    <div id="carouselExampleControls" class="mb-5 row carousel carousel-fade justify-content-around" data-bs-ride="carousel"> <!-- ABRIMOS CAROUSEL DE CARTAS-->
       <div id="carrusel_estancias" class="carousel-inner carrusel w-100 justify-content-around order-3 order-md-2 col"> <!-- CONTENEDOR DE LOS ITEMS -->
 
         <div id="1" class="carousel-item d-flex active justify-content-evenly p-0"> <!--INTERIOR CON LAS CARTAS-->
@@ -365,10 +206,10 @@
       </div> <!-- FINAL DE LAS CARTAS Y LOS ITEMS-->
 
       <!-- BOTONES DE NAVEGACION DEL CARRUSEL -->
-      <button  type="button" class="order-1 col-6 col-md-1" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <button  type="button" class="flechacarousel order-1 col-6 col-md-1" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon m-0 botonesN" aria-hidden="true"></span>
       </button> 
-      <button  type="button" class="order-2 order-md-3 col-6 col-md-1" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <button  type="button" class="flechacarousel order-2 order-md-3 col-6 col-md-1" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon m-0 botonesP" aria-hidden="true"></span> 
       </button>
       <!-- BOTONES DE NAVEGACION DEL CARRUSEL -->
