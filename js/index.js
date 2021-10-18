@@ -380,47 +380,37 @@ function buscarVuelos() {
 
       });
 
+
+      for (var i = 0; i < JSON_bbdd['estancias'].length; i++) {
+        
+        if (JSON_bbdd['estancias'][i]['ubicacion'].toUpperCase().includes(destino.toUpperCase())) {
+          document.getElementById("cuerpo").innerHTML="<a data-id='"+i+"' data-bs-toggle='modal' data-bs-target='#tarjetaModal' class='modalDeCartaGrande'>"
+                                                      +   "<div class='card' style='width: 18rem;'>"
+                                                      +     "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='card-img-top'>"
+                                                      +     "<div class='card-body'>"
+                                                      +       "<div class='ubicacion'>"
+                                                      +          "<img src='img/ubicacion.png'><p>"+JSON_bbdd['estancias'][i]['ubicacion']+"</p>"
+                                                      +       "</div>"
+                                                      +       "<h5 class='card-title a'>"+JSON_bbdd['estancias'][i]['nombre']+"</h5>"
+                                                      +       "<div class='estrellas'>"
+                                                      +         JSON_bbdd['estancias'][i]['rating']
+                                                      +        "</div>" 
+                                                      +       "<div class='precio'>"
+                                                      +          "<h5>"+JSON_bbdd['estancias'][i]['precio']+"€</h5>"
+                                                      +         "<p>por noche</p>"
+                                                      +       "</div>"
+                                                      +     "</div>"
+                                                      +    "</div>"
+                                                      +  "</a>";
+        }
+        
+      }
+
+      
+
     }else{
       divVuelos.innerHTML+="No hay resultados";
     }
-
-    /*
-        
-
-
-    "<div class='row py-2 vuelo'> <!--Ida-->"
-                              +        "<img src='img/"+vueloIda.img+"' class='col-4 aerolineaImg'>"
-                              +        "<div class='col-8 d-flex justify-content-evenly infoVuelo'>"
-                              +         " <div class='d-flex flex-column'>"
-                              +            "<p class='hora'>"+fechaI[1]+"</p>"
-                              +            "<class='lugar'>"+ubicSalidaI[1]+"</p>"
-                              +          "</div>"
-                              +          "<div class='d-flex flex-column'>"
-                              +           "<img src='img/flecha.png' class='imgFlecha'>"
-                              +          "</div>"
-                              +          "<div class='d-flex flex-column'>"
-                              +            "<p class='hora'>"+fechaI[2]+"</p>"
-                              +            "<p class='lugar'>"+ubicDestinoI[1]+"</p>"
-                              +          "</div>"
-                              +      "</div>"
-                              +      "</div>"
-
-
-
-    divVuelos.innerHTML+="Precio: "+  ((precioAdulto*cantidadAdultos)+(precioNiño*cantidadNiños)) +" <br> " ;
-    
-    */
-
-    /*
-    if (flagVuelta==false && flagIda==false) {
-      divVuelos.innerHTML+="No se han encontrado resultados";
-    }else if (flagVuelta==true && flagIda==false) {
-      divVuelos.innerHTML+="No se han encontrado vuelos de ida";
-    }else if (flagVuelta==false && flagIda==true) {
-      divVuelos.innerHTML+="No se han encontrado vuelos de vuelta";
-    }
-
-    */
     
   }
 

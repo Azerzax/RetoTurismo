@@ -155,11 +155,15 @@
 #resultadosVuelos{
     margin-top: 10px;
     padding: 10px;
-    background-color: #76DBD1;
 }
 
 .divprecio{
     background-color: #ECF4F3;
+}
+
+.cartasgrandes{
+    width: 18rem !important;
+    background-color: #57A99A !important;
 }
 
 
