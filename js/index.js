@@ -371,8 +371,8 @@ function buscarVuelos() {
                                 +   " </div>"
                                   
                                 +    "<div class=' divprecio col-12 col-md-2 bg-light d-flex flex-column justify-content-center'> <!--Precio-->"
-                                +      "<h4 class=' '>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€</h4>"
-                                +      "<button value='"+vuelosIda.indexOf(vueloIda)+"-"+vuelosVuelta.indexOf(vueloVuelta)+"' class='btn btn-primary'>Reservar</button>"
+                                +      "<h4 class='mt-2'>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€</h4>"
+                                +      "<button value='"+vuelosIda.indexOf(vueloIda)+"-"+vuelosVuelta.indexOf(vueloVuelta)+"' class='botonreservuelo mb-2 btn btn-primary'>Reservar</button>"
                                 +    "</div>"
                                     
                                   
@@ -485,6 +485,202 @@ function buscarVuelos() {
 }
 
 
+
+
+
+
+
+
+function buscarVuelo() {
+
+  var vuelosIda=new Array();
+
+  
+  var salida = document.getElementById("sal2").value;
+  var destino = document.getElementById("dest2").value;
+  var ida = document.getElementById("ida2").value;
+  var pasajerosA = document.getElementById("pasajerosA").value;
+  var pasajerosN = document.getElementById("pasajerosN").value;
+
+
+  
+  var cantidadAdultos=parseInt(pasajerosA);
+  
+  var cantidadNiños=parseInt(pasajerosN);
+
+  
+
+  if (salida=="" || destino=="" || ida=="" || pasajerosA=="" || pasajerosN=="") {
+    alert("Faltan campos por rellenar");
+
+  }else {
+    divVuelos.innerHTML="";
+    document.getElementById("cuerpo2").innerHTML="";
+    document.getElementById("cuerpo2").style.display="none";
+    var flagIda=false;
+
+    
+
+    JSON_bbdd['vuelos'].forEach(element => {
+      var ubicaciones=element["ubicacion"].split("-");
+      var ubicSalida=ubicaciones[0];
+      var ubicDestino=ubicaciones[1];
+      var fecha = element["Fecha"].split(",");
+      
+      
+      if (ubicSalida.toUpperCase().includes(salida.toUpperCase()) && ubicDestino.toUpperCase().includes(destino.toUpperCase())) {
+        if (fecha[0]==ida) {
+          flagIda=true;
+          vuelosIda.push(element);
+        }       
+      }
+
+    });
+
+
+    if (flagIda) {
+      vuelosIda.forEach(vueloIda => {
+
+        var ubicacionesI=vueloIda.ubicacion.split("-");
+        var ubicSalidaI=ubicacionesI[0].split(",");
+        var ubicDestinoI=ubicacionesI[1].split(",");
+        var fechaI = vueloIda.Fecha.split(",");
+
+        var preciosI = vueloIda.precio.split("-");
+        var precioAdultoI=parseInt(preciosI[0]);
+        var precioNiñoI=parseInt(preciosI[1]);
+
+        
+
+          divVuelos.innerHTML+= "<div id='vuelos' class='p-3  mb-5 row'>"
+
+                                
+                                +    "<div class='col'><!--Info-->"
+                                  
+                                  
+                                +      "<div class='row py-2 vuelo'> <!--Ida-->"
+                                +        "<img src='img/"+vueloIda.img+"' class='col-4 aerolineaImg' >"
+                                +        "<div class='col-8 d-flex justify-content-evenly infoVuelo'>"
+                                +         "<div class='d-flex flex-column'>"
+                                +            "<p class='hora'>"+fechaI[1]+"</p>"
+                                +            "<p class='lugar'>"+ubicSalidaI[1]+"</p>"
+                                +          "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                            
+                                +           "<img src='img/flecha.png' class='imgFlecha'>"
+                                            
+                                +          "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                +           " <p class='hora'>"+fechaI[2]+"</p>"
+                                +            "<p class='lugar'>"+ubicDestinoI[1]+"</p>"
+                                +          "</div>"
+                                +        "</div>"
+                                +      "</div>"
+                                  
+                                  
+                                  
+                                  
+                                +   " </div>"
+                                  
+                                +    "<div class=' divprecio col-12 col-md-2 bg-light d-flex flex-column justify-content-center'> <!--Precio-->"
+                                +      "<h4 class='mt-2'>"+((precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€</h4>"
+                                +      "<button value='"+vuelosIda.indexOf(vueloIda)+"' class='botonreservuelo mb-2 btn btn-primary'>Reservar</button>"
+                                +    "</div>"
+                                    
+                                  
+                                  
+                                +  "</div>"
+
+        
+
+
+      });
+
+
+      var cont=0;
+      for (var i = 0; i < JSON_bbdd['estancias'].length; i++) {
+        
+        if (JSON_bbdd['estancias'][i]['ubicacion'].toUpperCase().includes(destino.toUpperCase())) {
+          
+          
+
+          if (cont==0) {
+            document.getElementById("cuerpo2").style.display="flex";
+            document.getElementById("cuerpo").style.display="none";
+            document.getElementById("cuerpo2").innerHTML+="<div class='text-center mt-3 mb-3'>"
+                                                      +  "<p id='titulohoteles'>Estancias de interes</p>"
+                                                      + "</div>"
+          }
+          
+          cont++;
+
+          //document.getElementById("cuerpo2").style.border="10px solid #57A99A";
+
+          document.getElementById("cuerpo2").innerHTML+="<div class='cartaGrande mt-5 mb-5 col-sm-10 col-md-10 col-lg-10'>"
+					+ "<div class='hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex'>"
+					+	"<div class='hotel-card_img'>"
+							
+          +			"<div class=''>"
+          +       "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='d-block w-100' alt='Hotel Image'>"
+          +			"</div>"
+
+					+	"</div>"
+					+	"<div class='hotel-card_info p-4'>"
+					+		"<div class='d-flex align-items-center mb-2'>"
+					+		"	<h5 class='mb-0 m-2'>"+JSON_bbdd['estancias'][i]['nombre']+"</h5>"
+					+		"<div class='estrellas'>"
+          +         JSON_bbdd['estancias'][i]['rating']
+          +        "</div>"
+					+		"</div>"
+					+		"<div class='d-flex justify-content-between align-items-end'>"
+					+			"<div class='hotel-card_details'>"
+					+				"<div class='ubicacion text-muted mb-2'><img src='img/ubicacion.png'><p class='ms-3' >"+JSON_bbdd['estancias'][i]['ubicacion']+"</p></div>"
+					+				"<div class='amnities d-flex mb-3'>"
+					+					"<img class='m-2' src='img/icons/desk-bell.svg' data-toggle='tooltip' data-placement='top' title='Desk bell' alt='Desk bell'>"
+					+					"<img class='m-2' src='img/icons/single-bed.svg' data-toggle='tooltip' data-placement='top' title='Single Bed' alt='Single Bed'>"
+					+					"<img class='m-2' src='img/icons/towels.svg' data-toggle='tooltip' data-placement='top' title='Towels' alt='Towels'>"
+					+					"<img class='m-2' src='img/icons/wifi.svg' data-toggle='tooltip' data-placement='top' title='Wifi' alt='Wifi'>"
+					+				"</div>"
+					+				"<ul class='hotel-checklist p-0 mb-0'>"
+					+					"<li><i class='fa fa-check text-success'></i> Lorem ipsum dolor</li>"
+					+					"<li><i class='fa fa-check text-success'></i> Cras lectus purus, </li>"
+					+					"<li><i class='fa fa-check text-success'></i> ornare eget congue</li>"
+					+				"</ul>"
+					+			"</div>"
+					+			"<div class='hotel-card_pricing text-center'>"
+					+				"<h3>"+JSON_bbdd['estancias'][i]['precio']+"€</h3>"
+					
+					+				"<button class='btn btn-primary'>Reservar</button>"
+					+			"</div>"
+					+		"</div>"
+					+	"</div>"
+					+ "</div>"
+				  + "</div>"
+        }
+        
+      }
+
+      
+
+    }else{
+      document.getElementById("cuerpo").style.display="block";
+      divVuelos.innerHTML="<div class='text-center'>"
+      +  "<h2>x</h2><p>No se han encontrado resultados para tu busqueda</p><h2>x</h2>"
+      + "</div>";
+    }
+    
+  }
+
+  
+
+}
+
+
+
+
+
+
+
 function buscarHoteles(){
   var hotel = document.getElementById("hotel").value;
   if (hotel == null || hotel == "") {
@@ -557,6 +753,7 @@ setPasajeros();
 document.getElementById("pasajerosSave").onclick= setPasajeros;
 
 buscarVuel.onclick= buscarVuelos;
+document.getElementById("buscar2").onclick= buscarVuelo;
 buscarHot.onclick= buscarHoteles;
 
 /*IMRANE SCRIPTS*/

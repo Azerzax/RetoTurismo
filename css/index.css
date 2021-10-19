@@ -69,13 +69,13 @@
 
 #titulomotor{
     color: white;
-    font-size: 3vw;
+    font-size: 45px;
 }
 
 .botonMotor{
     color: white !important;
     background-color: transparent !important;
-    font-size: 1.3vw;
+    font-size: 22px;
    
 }
 
@@ -83,7 +83,7 @@
     
     color: rgba(255, 255, 255, 0.822) !important;
     background-color: transparent !important;
-    font-size: 1.3vw;
+    font-size: 22px;
 }
 .botonMotor[aria-selected="true"]{
     font-weight: bold;
@@ -92,7 +92,7 @@
 .textForm{
     color: white ;
     font-weight: lighter;
-    font-size: 1.1vw;
+    font-size: 20px;
 }
 
 
@@ -214,14 +214,17 @@
 
 #resultadosVuelos{
     padding-top: 30px !important; 
-    padding: 90px;
+    padding: 100px;
 }
 
 .divprecio{
+    font-size: 10px;
     display: flex;
     align-items: center;
     background-color: #ECF4F3;
 }
+
+
 
 .cartasgrandes{
     width: 18rem !important;
@@ -283,6 +286,14 @@ footer{
     border-top-right-radius: 30px;
 }
 
+.divprecio h4{
+    font-size: 50px;
+}
+
+.botonreservuelo{
+    font-size: 25px !important;
+}
+
 @media (max-width: 1920px){
     .items{
         margin-left: -5%;
@@ -303,6 +314,15 @@ footer{
     .carousel-control-next-icon{
         margin-left: -5%;
     }
+
+    .divprecio h4{
+        font-size: 45px;
+    }
+    
+    .botonreservuelo{
+        font-size: 25px !important;
+    }
+
 }
 
 @media (max-width: 1200px){
@@ -324,6 +344,13 @@ footer{
     .carousel-control-prev-icon{
         margin-left: -20%;
     }
+    .divprecio h4{
+        font-size: 30px;
+    }
+    
+    .botonreservuelo{
+        font-size: 18px !important;
+    }
 }
 
 @media (max-width: 992px){
@@ -342,6 +369,15 @@ footer{
     .carousel-control-prev-icon{
         margin-left: 70%;
     }
+
+    .divprecio h4{
+        font-size: 20px;
+    }
+
+    .botonreservuelo{
+        width: 80px;
+        font-size: 15px !important;
+    }
 }
 
 @media (max-width: 768px){
@@ -355,6 +391,10 @@ footer{
         margin-left: -8%;
     }
     
+    #titulomotor{
+        color: white;
+        font-size: 35px;
+    }
 
     .vuelo{
         height: 26vw;
@@ -380,6 +420,10 @@ footer{
         padding-right: 0px !important;
     }
 
+    #resultadosVuelos{
+        padding-top: 30px !important; 
+        padding: 70px;
+    }
     
 }
 
@@ -391,6 +435,25 @@ footer{
     .modalDeCarta{
         padding-left: 34% !important;
         padding-right: 0px !important;
+    }
+
+    #titulomotor{
+        color: white;
+        font-size: 25px;
+    }
+
+    #resultadosVuelos{
+        padding-top: 30px !important; 
+        padding: 50px;
+    }
+
+    .divprecio h4{
+        font-size: 17px;
+    }
+
+    .botonreservuelo{
+        width: 75px;
+        font-size: 13px !important;
     }
 
 }
