@@ -322,7 +322,7 @@ function buscarVuelos() {
           var precioAdultoV=parseInt(preciosV[0]);
           var precioNiñoV=parseInt(preciosV[1]);
 
-          divVuelos.innerHTML+= "<div id='vuelos' class='p-3 m-1 mb-5 row'>"
+          divVuelos.innerHTML+= "<div id='vuelos' class='p-3  mb-5 row'>"
 
                                 
                                 +    "<div class='col'><!--Info-->"
@@ -371,7 +371,7 @@ function buscarVuelos() {
                                 +   " </div>"
                                   
                                 +    "<div class=' divprecio col-12 col-md-2 bg-light d-flex flex-column justify-content-center'> <!--Precio-->"
-                                +      "<p class='p-2 py-md-5'>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€</p>"
+                                +      "<h4 class=' '>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€</h4>"
                                 +      "<button value='"+vuelosIda.indexOf(vueloIda)+"-"+vuelosVuelta.indexOf(vueloVuelta)+"' class='btn btn-primary'>Reservar</button>"
                                 +    "</div>"
                                     
@@ -415,19 +415,14 @@ function buscarVuelos() {
 					+	"</div>"
 					+	"<div class='hotel-card_info p-4'>"
 					+		"<div class='d-flex align-items-center mb-2'>"
-					+		"	<h5 class='mb-0 m-2'>Hotel Paradise</h5>"
-					+		"	<div>"
-					+				"<i class='fa fa-star text-warning'></i>"
-					+				"<i class='fa fa-star text-warning'></i>"
-					+				"<i class='fa fa-star text-warning'></i>"
-					+				"<i class='fa fa-star text-warning'></i>"
-					+				"<i class='fa fa-star text-warning'></i>"
-					+			"</div>"
+					+		"	<h5 class='mb-0 m-2'>"+JSON_bbdd['estancias'][i]['nombre']+"</h5>"
+					+		"<div class='estrellas'>"
+          +         JSON_bbdd['estancias'][i]['rating']
+          +        "</div>"
 					+		"</div>"
 					+		"<div class='d-flex justify-content-between align-items-end'>"
 					+			"<div class='hotel-card_details'>"
 					+				"<div class='ubicacion text-muted mb-2'><img src='img/ubicacion.png'><p class='ms-3' >"+JSON_bbdd['estancias'][i]['ubicacion']+"</p></div>"
-					+				"<div class='mb-2'><span class='badge badge-primary'>4.5</span> <a href='#!' class='text-muted'>(245 ratings & 56 reviews)</a></div>"
 					+				"<div class='amnities d-flex mb-3'>"
 					+					"<img class='m-2' src='img/icons/desk-bell.svg' data-toggle='tooltip' data-placement='top' title='Desk bell' alt='Desk bell'>"
 					+					"<img class='m-2' src='img/icons/single-bed.svg' data-toggle='tooltip' data-placement='top' title='Single Bed' alt='Single Bed'>"
@@ -441,7 +436,7 @@ function buscarVuelos() {
 					+				"</ul>"
 					+			"</div>"
 					+			"<div class='hotel-card_pricing text-center'>"
-					+				"<h3>₹1,300</h3>"
+					+				"<h3>"+JSON_bbdd['estancias'][i]['precio']+"€</h3>"
 					
 					+				"<button class='btn btn-primary'>Reservar</button>"
 					+			"</div>"
@@ -477,6 +472,7 @@ function buscarVuelos() {
       
 
     }else{
+      document.getElementById("cuerpo").style.display="block";
       divVuelos.innerHTML="<div class='text-center'>"
       +  "<h2>x</h2><p>No se han encontrado resultados para tu busqueda</p><h2>x</h2>"
       + "</div>";
@@ -516,7 +512,7 @@ function buscarHoteles(){
         +	"</div>"
         +	"<div class='hotel-card_info p-4'>"
         +		"<div class='d-flex align-items-center mb-2'>"
-        +		"	<h5 class='mb-0 m-2'>Hotel Paradise</h5>"
+        +		"	<h5 class='mb-0 m-2'>"+JSON_bbdd['estancias'][i]['nombre']+"</h5>"
         +		"	<div>"
         +				"<i class='fa fa-star text-warning'></i>"
         +				"<i class='fa fa-star text-warning'></i>"
@@ -528,7 +524,6 @@ function buscarHoteles(){
         +		"<div class='d-flex justify-content-between align-items-end'>"
         +			"<div class='hotel-card_details'>"
         +				"<div class='ubicacion text-muted mb-2'><img src='img/ubicacion.png'><p class='ms-3' >"+JSON_bbdd['estancias'][i]['ubicacion']+"</p></div>"
-        +				"<div class='mb-2'><span class='badge badge-primary'>4.5</span> <a href='#!' class='text-muted'>(245 ratings & 56 reviews)</a></div>"
         +				"<div class='amnities d-flex mb-3'>"
         +					"<img class='m-2' src='img/icons/desk-bell.svg' data-toggle='tooltip' data-placement='top' title='Desk bell' alt='Desk bell'>"
         +					"<img class='m-2' src='img/icons/single-bed.svg' data-toggle='tooltip' data-placement='top' title='Single Bed' alt='Single Bed'>"
@@ -542,7 +537,7 @@ function buscarHoteles(){
         +				"</ul>"
         +			"</div>"
         +			"<div class='hotel-card_pricing text-center'>"
-        +				"<h3>₹1,300</h3>"
+        +				"<h3>"+JSON_bbdd['estancias'][i]['precio']+"€</h3>"
         
         +				"<button class='btn btn-primary'>Reservar</button>"
         +			"</div>"

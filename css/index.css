@@ -181,42 +181,45 @@
 }
 
 .aerolineaImg{
-    margin-left: px;
-    height: 15vw;
+
 }
 
 .hora{
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 .lugar{
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 .duracion{
-    font-size: 1vw;
+    font-size: 1.5vw;
 }
+
 .infoVuelo{
-   margin-top: 4vw !important; 
+   
 }
 
 #vuelos{
-    padding: 50px o !important;
     box-shadow: 1px 2px 2px 2px #000000ab;
     border-radius: 10px;
     background-color: #57A99A;
 }
 
 .vuelo{
+    display: flex;
+    align-items: center;
     border: solid 2px #ECF4F3;
     background-color: #D1EECC;
     
 }
 
 #resultadosVuelos{
-    margin-top: 10px;
-    padding: 50px;
+    padding-top: 30px !important; 
+    padding: 90px;
 }
 
 .divprecio{
+    display: flex;
+    align-items: center;
     background-color: #ECF4F3;
 }
 
@@ -357,9 +360,7 @@ footer{
         height: 26vw;
     }
 
-    .aerolineaImg{
-        height: 23vw;
-    }
+
     
     .hora{
         font-size: 3vw;

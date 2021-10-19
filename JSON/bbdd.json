@@ -9,49 +9,49 @@
         "cod": "2",
         "nombre": "HM Balangera",
         "ubicacion": "Paris, Francia",
-        "precio": "100,00",
+        "precio": "90,00",
         "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star'></span>"
     },{
         "cod": "3",
         "nombre": "Iberostar Heritage Grand Mencey",
         "ubicacion": "Santa Cruz de Tenerife, España",
-        "precio": "100,00",
+        "precio": "75,00",
         "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "4",
         "nombre": "Best Western Premier Hotel Dante",
         "ubicacion": "Lyon, Francia",
-        "precio": "100,00",
+        "precio": "97,00",
         "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "5",
         "nombre": "Barceló Málaga Hotel",
         "ubicacion": "Málaga, España",
-        "precio": "100,00",
+        "precio": "136,00",
         "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "6",
         "nombre": "Hotel Colocón Rambla",
         "ubicacion": "Santa Cruz de Tenerife, España",
-        "precio": "100,00",
+        "precio": "65,00",
         "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "7",
         "nombre": "FERGUS Style Bahamas",
         "ubicacion": "Ibiza, España",
-        "precio": "100,00",
+        "precio": "230,00",
         "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "8",
         "nombre": "Petit Palace Málaga Hotel",
         "ubicacion": "Málaga, España",
-        "precio": "100,00",
+        "precio": "80,00",
         "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     },{
         "cod": "9",
         "nombre": "Nou High Hotel Baleares",
         "ubicacion": "Palma de Mallorca, España",
-        "precio": "100,00",
+        "precio": "55,00",
         "rating": "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>"
     }
 ],
