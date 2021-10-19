@@ -1,42 +1,98 @@
-body{
-    background-color: #ECF4F3 !important;
-    color: #ECF4F3 !important;
+#body{
+    background-color: #ecf4f3;
 }
 
-.container{
-    margin-top: 1%;
-    background-color: #57A99A !important;
-    border-radius: 2%;
-    color: #ECF4F3 !important;
+#logo{
+    width: 25vw;
+}
+
+#motor_busqueda{
+    margin-top: 3vw;
+    padding: 1vw;
+    background-color: #76DBD1;
+}
+
+#cuerpo2{
+    border-radius: 10px;
+    border: 10px solid #57A99A;
+    padding-top: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #76DBD1;   
+}
+
+#resultadosHoteles{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formhoteles{
+    background-color: #57A99A;
+    border-radius: 5px;
+    border: 2px solid #D1EECC;
+}
+
+.btn{
+    background-color: #D1EECC !important;
+    color: #05473b !important;
+    border: 3px solid #76DBD1 !important;
 }
 
 
-header > nav{
-    background-color: #57A99A !important;
-    border-top-left-radius: 7% !important;
-    border-top-right-radius: 7% !important;
+
+.cartaGrande{
+    border: 10px solid #D1EECC;
+    border-radius: 10px;
 }
 
-header > nav > div > a{
-    font-size: xx-large !important;
-    font-weight: bold;
-    color: #ECF4F3 !important;
+#cuerpo{
+    background-color: #76DBD1;
 }
 
-button{
-    background-color: #ECF4F3 !important;
-    border-color: #ECF4F3 !important;
-    color: rgb(70, 69, 69) !important;
-}
-
-button:hover{
+.flechacarousel{
     background-color: #76DBD1 !important;
-    color: black !important;
 }
 
-.vuelo > div{
-    background-color: #57A99A !important;
+#formBuscador{
+    border: 3px solid #D1EECC;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #57A99A;
 }
+
+#titulomotor{
+    color: white;
+    font-size: 3vw;
+}
+
+.botonMotor{
+    color: white !important;
+    background-color: transparent !important;
+    font-size: 1.3vw;
+   
+}
+
+.botonMotor[aria-selected="false"]{
+    
+    color: rgba(255, 255, 255, 0.822) !important;
+    background-color: transparent !important;
+    font-size: 1.3vw;
+}
+.botonMotor[aria-selected="true"]{
+    font-weight: bold;
+}
+
+.textForm{
+    color: white ;
+    font-weight: lighter;
+    font-size: 1.1vw;
+}
+
+
 
 .ubicacion{
     display: grid;
@@ -64,10 +120,6 @@ button:hover{
 
 .precio p{
     color: rgba(0, 0, 0, 0.600);
-}
-
-.cartas{
-    width: 18rem;
 }
 
 .a{
@@ -127,6 +179,53 @@ button:hover{
     border: none;
 }
 
+.aerolineaImg{
+    margin-left: px;
+    height: 15vw;
+}
+
+.hora{
+    font-size: 2vw;
+}
+.lugar{
+    font-size: 2vw;
+}
+.duracion{
+    font-size: 1vw;
+}
+.infoVuelo{
+   margin-top: 4vw !important; 
+}
+
+#vuelos{
+    padding: 50px o !important;
+    box-shadow: 1px 2px 2px 2px #000000ab;
+    border-radius: 10px;
+    background-color: #57A99A;
+}
+
+.vuelo{
+    border: solid 2px #ECF4F3;
+    background-color: #D1EECC;
+    
+}
+
+#resultadosVuelos{
+    margin-top: 10px;
+    padding: 50px;
+}
+
+.divprecio{
+    background-color: #ECF4F3;
+}
+
+.cartasgrandes{
+    width: 18rem !important;
+    background-color: #57A99A !important;
+}
+
+
+
 .map-responsive{
 
     overflow:hidden;
@@ -151,6 +250,33 @@ button:hover{
 
     position:absolute;
 
+}
+
+#map{
+    margin: 8px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: rgba(128, 128, 128, 0.185);
+    box-shadow: 1px 2px 2px 2px #000000ab;
+}
+
+.imgFlecha{
+    margin-top: 12px;
+    height: 5vw;   
+}
+
+#titulohoteles{
+    width: 98vw;
+    color: white;
+    font-size: 3vw;
+    background-color: #57A99A;
+}
+
+footer{
+    background-color: #76DBD1;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }
 
 @media (max-width: 1920px){
@@ -224,6 +350,30 @@ button:hover{
     .carousel-control-prev-icon{
         margin-left: -8%;
     }
+    
+
+    .vuelo{
+        height: 26vw;
+    }
+
+    .aerolineaImg{
+        height: 23vw;
+    }
+    
+    .hora{
+        font-size: 3vw;
+    }
+    .lugar{
+        font-size: 3vw;
+    }
+    .duracion{
+        font-size: 2vw;
+    }
+    .infoVuelo{
+       margin-top: 6vw !important; 
+    }
+
+    
 }
 
 @media (max-width: 576px){
@@ -232,4 +382,56 @@ button:hover{
     }
 
 
+}
+
+
+/* Cartas hoteles en busqueda*/
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+
+.main-content {
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.text-striked {
+	text-decoration: line-through;
+}
+
+.shadow {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06) !important;
+}
+
+.hotel-card .hotel-card_images {
+	flex: 2;
+}
+.hotel-card .hotel-card_images .carousel-item img {
+	height: 250px;
+	object-fit: cover;
+}
+@media (min-width: 992px) {
+	.hotel-card .hotel-card_images .carousel-item img {
+		height: 100%;
+	}
+}
+
+.hotel-card .hotel-card_info {
+	flex: 3;
+}
+
+.hotel-card .amnities img {
+	max-height: 20px;
+}
+
+.hotel-card .hotel-checklist {
+	list-style-type: none;
+}
+
+.carousel .carousel-control-prev {
+	background: linear-gradient(to right, #333333bb, #33333300);
+}
+
+.carousel .carousel-control-next {
+	background: linear-gradient(to left, #333333bb, #33333300);
 }

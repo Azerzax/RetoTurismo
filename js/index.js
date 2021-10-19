@@ -216,11 +216,13 @@ function autoGen(){
 
 /*IMRANE SCRIPTS*/
 
+
 var pasajeros=document.querySelectorAll(".pasajeros");
 var pasajerosA=document.getElementById("pasajerosA");
 var pasajerosN=document.getElementById("pasajerosN");
-var botonbuscar=document.getElementById("buscar1");
-var divVuelos=document.getElementById("vuelos");
+var buscarVuel=document.getElementById("buscar1");
+var buscarHot=document.getElementById("buscar3");
+var divVuelos=document.getElementById("resultadosVuelos");
 
 pasajerosA.value="1";
 pasajerosN.value="0";
@@ -232,8 +234,19 @@ function setPasajeros() {
   }
 }
 
+
+
+var vuelosIda=new Array();
+var vuelosVuelta=new Array();
+
+
+
 function buscarVuelos() {
-  divVuelos.innerHTML="";
+
+  var vuelosIda=new Array();
+  var vuelosVuelta=new Array();
+
+  
   var salida = document.getElementById("sal1").value;
   var destino = document.getElementById("dest1").value;
   var ida = document.getElementById("ida1").value;
@@ -256,11 +269,12 @@ function buscarVuelos() {
     alert("La vuelta no puede ser antes que la ida")
 
   }else {
+    divVuelos.innerHTML="";
+    document.getElementById("cuerpo2").innerHTML="";
     var flagIda=false;
     var flagVuelta=false;
 
-    var vuelosIda=new Array();
-    var vuelosVuelta=new Array();
+    
 
     JSON_bbdd['vuelos'].forEach(element => {
       var ubicaciones=element["ubicacion"].split("-");
@@ -307,81 +321,161 @@ function buscarVuelos() {
           var precioAdultoV=parseInt(preciosV[0]);
           var precioNiñoV=parseInt(preciosV[1]);
 
-          divVuelos.innerHTML+="<div class='vuelo row'>"
-                              +    "<div class='col'><!--Info-->"
-                            
-                            
-                              +      "<div class='row py-2'> <!--Ida-->"
-                              +        "<img src='img/"+vueloIda.img+"' class='col-4' width='100%'>"
-                              +        "<div class='col-8 d-flex justify-content-evenly'>"
-                              +         " <div class='d-flex flex-column'>"
-                              +            "<h4>"+fechaI[1]+"</h4>"
-                              +            "<h4>"+ubicSalidaI[1]+"</h4>"
-                              +          "</div>"
-                              +          "<div class='d-flex flex-column'>"
-                              +           " <p>0h00min</p>"
-                              +            "<hr>"
-                              +            "<p>Directo</p>"
-                              +          "</div>"
-                              +          "<div class='d-flex flex-column'>"
-                              +            "<h4>"+fechaI[2]+"</h4>"
-                              +            "<h4>"+ubicDestinoI[1]+"</h4>"
-                              +          "</div>"
-                              +      "</div>"
-                              +      "</div>"
-                            
-                            
-                              +      "<div class='row py-2'> <!--Vuelta-->"
-                              +        "<img src='img/"+vueloVuelta.img+"' class='col-4' width='100%'>"
-                              +        "<div class='col-8 d-flex justify-content-evenly'>"
-                              +          "<div class='d-flex flex-column'>"
-                              +          "<h4>"+fechaV[1]+"</h4>"
-                              +          "<h4>"+ubicSalidaV[1]+"</h4>"
-                              +        "</div>"
-                              +        "<div class='d-flex flex-column'>"
-                              +          "<p>0h00min</p>"
-                              +         "<hr>"
-                              +          "<p>Directo</p>"
-                              +        "</div>"
-                              +        "<div class='d-flex flex-column'>"
-                              +          "<h4>"+fechaV[2]+"</h4>"
-                              +          "<h4>"+ubicDestinoV[1]+"</h4>"
-                              +        "</div>"
-                              +        "</div>"
-                              +      "</div>"
-                            
-                            
-                              +    "</div>"
-                              +    "<div class='col-12 col-md-2 bg-light d-flex flex-column justify-content-center'> <!--Precio-->"
-                              +      "<p class='p-2 py-md-5'>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€ </p>"
-                              +      "<button class='btn btn-primary'>Comprar</button>"
-                              +    "</div>"
-                              +  "</div> <br> <br> <br> <br>"
+          divVuelos.innerHTML+= "<div id='vuelos' class='p-3 m-1 mb-5 row'>"
+
+                                
+                                +    "<div class='col'><!--Info-->"
+                                  
+                                  
+                                +      "<div class='row py-2 vuelo'> <!--Ida-->"
+                                +        "<img src='img/"+vueloIda.img+"' class='col-4 aerolineaImg' >"
+                                +        "<div class='col-8 d-flex justify-content-evenly infoVuelo'>"
+                                +         "<div class='d-flex flex-column'>"
+                                +            "<p class='hora'>"+fechaI[1]+"</p>"
+                                +            "<p class='lugar'>"+ubicSalidaI[1]+"</p>"
+                                +          "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                            
+                                +           "<img src='img/flecha.png' class='imgFlecha'>"
+                                            
+                                +          "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                +           " <p class='hora'>"+fechaI[2]+"</p>"
+                                +            "<p class='lugar'>"+ubicDestinoI[1]+"</p>"
+                                +          "</div>"
+                                +        "</div>"
+                                +      "</div>"
+                                  
+                                  
+                                +      "<div class='row py-2 vuelo'> <!--Ida-->"
+                                +       "<img src='img/"+vueloVuelta.img+"' class='col-4 aerolineaImg' >"
+                                +        "<div class='col-8 d-flex justify-content-evenly infoVuelo'>"
+                                +          "<div class='d-flex flex-column'>"
+                                +            "<p class='hora'>"+fechaV[1]+"</p>"
+                                +            "<p class='lugar'>"+ubicSalidaV[1]+"</p>"
+                                +          "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                           
+                                +            "<img src='img/flecha.png' class='imgFlecha'>"
+                                            
+                                +         "</div>"
+                                +          "<div class='d-flex flex-column'>"
+                                +            "<p class='hora'>"+fechaV[2]+"</p>"
+                                +           " <p class='lugar'>"+ubicDestinoV[1]+"</p>"
+                                +          "</div>"
+                                +        "</div>"
+                                +      "</div>"
+                                  
+                                  
+                                +   " </div>"
+                                  
+                                +    "<div class=' divprecio col-12 col-md-2 bg-light d-flex flex-column justify-content-center'> <!--Precio-->"
+                                +      "<p class='p-2 py-md-5'>"+((precioAdultoV*cantidadAdultos)+(precioNiñoV*cantidadNiños)+(precioNiñoI*cantidadNiños)+(precioAdultoI*cantidadAdultos))+"€</p>"
+                                +      "<button value='"+vuelosIda.indexOf(vueloIda)+"-"+vuelosVuelta.indexOf(vueloVuelta)+"' class='btn btn-primary'>Reservar</button>"
+                                +    "</div>"
+                                    
+                                  
+                                  
+                                +  "</div>"
+
         });
+
+
       });
+
+
+      var cont=0;
+      for (var i = 0; i < JSON_bbdd['estancias'].length; i++) {
+        
+        if (JSON_bbdd['estancias'][i]['ubicacion'].toUpperCase().includes(destino.toUpperCase())) {
+          
+          
+
+          if (cont==0) {
+            document.getElementById("cuerpo2").style.display="flex";
+            document.getElementById("cuerpo").style.display="none";
+            document.getElementById("cuerpo2").innerHTML+="<div class='text-center mt-3 mb-3'>"
+                                                      +  "<p id='titulohoteles'>Estancias de interes</p>"
+                                                      + "</div>"
+          }
+          
+          cont++;
+
+          document.getElementById("cuerpo2").innerHTML+="<div class='cartaGrande mt-5 mb-5 col-sm-10 col-md-10 col-lg-10'>"
+					+ "<div class='hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex'>"
+					+	"<div class='hotel-card_img'>"
+							
+          +			"<div class=''>"
+          +       "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='d-block w-100' alt='Hotel Image'>"
+          +			"</div>"
+
+					+	"</div>"
+					+	"<div class='hotel-card_info p-4'>"
+					+		"<div class='d-flex align-items-center mb-2'>"
+					+		"	<h5 class='mb-0 m-2'>Hotel Paradise</h5>"
+					+		"	<div>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+				"<i class='fa fa-star text-warning'></i>"
+					+			"</div>"
+					+		"</div>"
+					+		"<div class='d-flex justify-content-between align-items-end'>"
+					+			"<div class='hotel-card_details'>"
+					+				"<div class='ubicacion text-muted mb-2'><img src='img/ubicacion.png'><p class='ms-3' >"+JSON_bbdd['estancias'][i]['ubicacion']+"</p></div>"
+					+				"<div class='mb-2'><span class='badge badge-primary'>4.5</span> <a href='#!' class='text-muted'>(245 ratings & 56 reviews)</a></div>"
+					+				"<div class='amnities d-flex mb-3'>"
+					+					"<img class='m-2' src='img/icons/desk-bell.svg' data-toggle='tooltip' data-placement='top' title='Desk bell' alt='Desk bell'>"
+					+					"<img class='m-2' src='img/icons/single-bed.svg' data-toggle='tooltip' data-placement='top' title='Single Bed' alt='Single Bed'>"
+					+					"<img class='m-2' src='img/icons/towels.svg' data-toggle='tooltip' data-placement='top' title='Towels' alt='Towels'>"
+					+					"<img class='m-2' src='img/icons/wifi.svg' data-toggle='tooltip' data-placement='top' title='Wifi' alt='Wifi'>"
+					+				"</div>"
+					+				"<ul class='hotel-checklist p-0 mb-0'>"
+					+					"<li><i class='fa fa-check text-success'></i> Lorem ipsum dolor</li>"
+					+					"<li><i class='fa fa-check text-success'></i> Cras lectus purus, </li>"
+					+					"<li><i class='fa fa-check text-success'></i> ornare eget congue</li>"
+					+				"</ul>"
+					+			"</div>"
+					+			"<div class='hotel-card_pricing text-center'>"
+					+				"<h3>₹1,300</h3>"
+					
+					+				"<button class='btn btn-primary'>Reservar</button>"
+					+			"</div>"
+					+		"</div>"
+					+	"</div>"
+					+ "</div>"
+				  + "</div>"
+
+          /*
+          document.getElementById("cuerpo").innerHTML="<a data-id='"+i+"' data-bs-toggle='modal' data-bs-target='#tarjetaModal' class='modalDeCartaGrande'>"
+                                                      +   "<div class='card' style='width: 18rem;'>"
+                                                      +     "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='card-img-top'>"
+                                                      +     "<div class='card-body'>"
+                                                      +       "<div class='ubicacion'>"
+                                                      +          "<img src='img/ubicacion.png'><p>"+JSON_bbdd['estancias'][i]['ubicacion']+"</p>"
+                                                      +       "</div>"
+                                                      +       "<h5 class='card-title a'>"+JSON_bbdd['estancias'][i]['nombre']+"</h5>"
+                                                      +       "<div class='estrellas'>"
+                                                      +         JSON_bbdd['estancias'][i]['rating']
+                                                      +        "</div>" 
+                                                      +       "<div class='precio'>"
+                                                      +          "<h5>"+JSON_bbdd['estancias'][i]['precio']+"€</h5>"
+                                                      +         "<p>por noche</p>"
+                                                      +       "</div>"
+                                                      +     "</div>"
+                                                      +    "</div>"
+                                                      +  "</a>";
+                                                      */
+        }
+        
+      }
+
+      
 
     }else{
       divVuelos.innerHTML+="No hay resultados";
     }
-    
-
-    /*
-        
-
-    divVuelos.innerHTML+="Precio: "+  ((precioAdulto*cantidadAdultos)+(precioNiño*cantidadNiños)) +" <br> " ;
-    
-    */
-
-    /*
-    if (flagVuelta==false && flagIda==false) {
-      divVuelos.innerHTML+="No se han encontrado resultados";
-    }else if (flagVuelta==true && flagIda==false) {
-      divVuelos.innerHTML+="No se han encontrado vuelos de ida";
-    }else if (flagVuelta==false && flagIda==true) {
-      divVuelos.innerHTML+="No se han encontrado vuelos de vuelta";
-    }
-
-    */
     
   }
 
@@ -390,9 +484,79 @@ function buscarVuelos() {
 }
 
 
+function buscarHoteles(){
+  var hotel = document.getElementById("hotel").value;
+  if (hotel == null || hotel == "") {
+    alert("Introduce el nombre o la ubicacion del hotel")
+  }else{
+
+    document.getElementById("resultadosHoteles").innerHTML="";
+
+    for (var i = 0; i < JSON_bbdd['estancias'].length; i++) {
+      
+      if (JSON_bbdd['estancias'][i]['ubicacion'].toUpperCase().includes(hotel.toUpperCase())) {  
+        
+        document.getElementById("carouselExampleControls").innerHTML="";
+
+        document.getElementById("resultadosHoteles").style.display="flex";
+
+        document.getElementById("resultadosHoteles").innerHTML+="<div class='cartaGrande mb-5 col-sm-10 col-md-10 col-lg-10'>"
+        + "<div class='hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex'>"
+        +	"<div class='hotel-card_img'>"
+            
+        +			"<div class=''>"
+        +       "<img src='img/"+JSON_bbdd['estancias'][i]['nombre']+".jpg' class='d-block w-100' alt='Hotel Image'>"
+        +			"</div>"
+
+        +	"</div>"
+        +	"<div class='hotel-card_info p-4'>"
+        +		"<div class='d-flex align-items-center mb-2'>"
+        +		"	<h5 class='mb-0 m-2'>Hotel Paradise</h5>"
+        +		"	<div>"
+        +				"<i class='fa fa-star text-warning'></i>"
+        +				"<i class='fa fa-star text-warning'></i>"
+        +				"<i class='fa fa-star text-warning'></i>"
+        +				"<i class='fa fa-star text-warning'></i>"
+        +				"<i class='fa fa-star text-warning'></i>"
+        +			"</div>"
+        +		"</div>"
+        +		"<div class='d-flex justify-content-between align-items-end'>"
+        +			"<div class='hotel-card_details'>"
+        +				"<div class='ubicacion text-muted mb-2'><img src='img/ubicacion.png'><p class='ms-3' >"+JSON_bbdd['estancias'][i]['ubicacion']+"</p></div>"
+        +				"<div class='mb-2'><span class='badge badge-primary'>4.5</span> <a href='#!' class='text-muted'>(245 ratings & 56 reviews)</a></div>"
+        +				"<div class='amnities d-flex mb-3'>"
+        +					"<img class='m-2' src='img/icons/desk-bell.svg' data-toggle='tooltip' data-placement='top' title='Desk bell' alt='Desk bell'>"
+        +					"<img class='m-2' src='img/icons/single-bed.svg' data-toggle='tooltip' data-placement='top' title='Single Bed' alt='Single Bed'>"
+        +					"<img class='m-2' src='img/icons/towels.svg' data-toggle='tooltip' data-placement='top' title='Towels' alt='Towels'>"
+        +					"<img class='m-2' src='img/icons/wifi.svg' data-toggle='tooltip' data-placement='top' title='Wifi' alt='Wifi'>"
+        +				"</div>"
+        +				"<ul class='hotel-checklist p-0 mb-0'>"
+        +					"<li><i class='fa fa-check text-success'></i> Lorem ipsum dolor</li>"
+        +					"<li><i class='fa fa-check text-success'></i> Cras lectus purus, </li>"
+        +					"<li><i class='fa fa-check text-success'></i> ornare eget congue</li>"
+        +				"</ul>"
+        +			"</div>"
+        +			"<div class='hotel-card_pricing text-center'>"
+        +				"<h3>₹1,300</h3>"
+        
+        +				"<button class='btn btn-primary'>Reservar</button>"
+        +			"</div>"
+        +		"</div>"
+        +	"</div>"
+        + "</div>"
+        + "</div>"
+      }
+      
+    }
+
+  }
+}
+
+
 setPasajeros();
 document.getElementById("pasajerosSave").onclick= setPasajeros;
 
-botonbuscar.onclick= buscarVuelos;
+buscarVuel.onclick= buscarVuelos;
+buscarHot.onclick= buscarHoteles;
 
 /*IMRANE SCRIPTS*/
