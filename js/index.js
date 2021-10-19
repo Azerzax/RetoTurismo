@@ -271,6 +271,7 @@ function buscarVuelos() {
   }else {
     divVuelos.innerHTML="";
     document.getElementById("cuerpo2").innerHTML="";
+    document.getElementById("cuerpo2").style.display="none";
     var flagIda=false;
     var flagVuelta=false;
 
@@ -474,7 +475,9 @@ function buscarVuelos() {
       
 
     }else{
-      divVuelos.innerHTML+="No hay resultados";
+      divVuelos.innerHTML="<div class='text-center'>"
+      +  "<h2>x</h2><p>No se han encontrado resultados para tu busqueda</p><h2>x</h2>"
+      + "</div>";
     }
     
   }

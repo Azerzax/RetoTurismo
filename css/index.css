@@ -14,7 +14,7 @@
 
 #cuerpo2{
     border-radius: 10px;
-    border: 10px solid #57A99A;
+    border: 10px solid #93dacd;
     padding-top: 30px;
     display: none;
     flex-direction: column;
@@ -50,11 +50,14 @@
 }
 
 #cuerpo{
-    background-color: #76DBD1;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #9ed8d2;
+    box-shadow: 1px 2px 2px 2px #000000ab;
 }
 
 .flechacarousel{
-    background-color: #76DBD1 !important;
+    background-color: transparent !important;
 }
 
 #formBuscador{
