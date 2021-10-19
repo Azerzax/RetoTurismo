@@ -20,9 +20,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #76DBD1;
-    
+    background-color: #76DBD1;   
 }
+
+#resultadosHoteles{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formhoteles{
+    background-color: #57A99A;
+    border-radius: 5px;
+    border: 2px solid #D1EECC;
+}
+
+.btn{
+    background-color: #D1EECC !important;
+    color: #05473b !important;
+    border: 3px solid #76DBD1 !important;
+}
+
+
 
 .cartaGrande{
     border: 10px solid #D1EECC;
