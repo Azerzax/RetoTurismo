@@ -402,6 +402,8 @@ function buscarVuelos() {
           
           cont++;
 
+          //document.getElementById("cuerpo2").style.border="10px solid #57A99A";
+
           document.getElementById("cuerpo2").innerHTML+="<div class='cartaGrande mt-5 mb-5 col-sm-10 col-md-10 col-lg-10'>"
 					+ "<div class='hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex'>"
 					+	"<div class='hotel-card_img'>"
