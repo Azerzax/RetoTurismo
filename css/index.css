@@ -155,6 +155,8 @@
 .modalDeCarta{
     color: black;
     text-decoration: none;
+    padding-left: 7% !important;
+    padding-right: 0px !important;
 }
 
 .modalDeCarta :hover{
@@ -372,6 +374,11 @@ footer{
        margin-top: 6vw !important; 
     }
 
+    .modalDeCarta{
+        padding-left: 4% !important;
+        padding-right: 0px !important;
+    }
+
     
 }
 
@@ -380,6 +387,10 @@ footer{
         margin-left: 4%;
     }
 
+    .modalDeCarta{
+        padding-left: 34% !important;
+        padding-right: 0px !important;
+    }
 
 }
 
